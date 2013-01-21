@@ -1,5 +1,6 @@
 usb_pwrmon
 ==========
+Simple PIC-based usb port current/voltage/power measurement with integrated LCD display + auto-on backlight.
 
 comp info
 ==========
