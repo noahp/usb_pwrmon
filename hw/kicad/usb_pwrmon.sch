@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 1/22/2013 9:40:15 PM
+EESchema Schematic File Version 2  date 2/4/2013 8:52:13 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,14 +30,13 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:usb_pwrmon
-LIBS:usb_pwrmon-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "23 jan 2013"
+Date "5 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +44,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	6700 3450 6550 3450
 Wire Wire Line
 	6700 3300 6550 3300
 Wire Wire Line
@@ -89,6 +90,8 @@ Wire Wire Line
 	4400 4350 4550 4350
 Wire Wire Line
 	4400 4950 4550 4950
+Wire Wire Line
+	6550 4050 6700 4050
 Text GLabel 4400 3300 0    60   Input ~ 0
 SEG7
 Text GLabel 4400 4950 0    60   Input ~ 0
