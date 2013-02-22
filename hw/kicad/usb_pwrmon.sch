@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/22/2013 6:04:26 PM
+EESchema Schematic File Version 2  date 2/22/2013 6:14:41 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -45,6 +45,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L R R?
+U 1 1 5127FAE0
+P 5900 2550
+F 0 "R?" V 5980 2550 50  0000 C CNN
+F 1 "R" V 5900 2550 50  0000 C CNN
+	1    5900 2550
+	0    -1   -1   0   
+$EndComp
 $Comp
 L USB_NP_1 J?
 U 1 1 5127F961
