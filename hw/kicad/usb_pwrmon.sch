@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/4/2013 8:52:13 PM
+EESchema Schematic File Version 2  date 2/22/2013 6:04:26 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,13 +30,14 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:usb_pwrmon
+LIBS:usb_pwrmon-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "5 feb 2013"
+Date "22 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -44,118 +45,136 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L USB_NP_1 J?
+U 1 1 5127F961
+P 9250 3050
+F 0 "J?" H 9250 2500 60  0000 C CNN
+F 1 "USB_NP_1" H 9250 3550 60  0000 C CNN
+	1    9250 3050
+	-1   0    0    1   
+$EndComp
+$Comp
+L USB_NP_1 J?
+U 1 1 5127F95A
+P 3150 2700
+F 0 "J?" H 3150 2150 60  0000 C CNN
+F 1 "USB_NP_1" H 3150 3200 60  0000 C CNN
+	1    3150 2700
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	6700 3450 6550 3450
+	6400 4300 6250 4300
 Wire Wire Line
-	6700 3300 6550 3300
+	6400 4150 6250 4150
 Wire Wire Line
-	4550 4800 4400 4800
+	4250 5650 4100 5650
 Wire Wire Line
-	4550 4200 4400 4200
+	4250 5050 4100 5050
 Wire Wire Line
-	4550 3750 4400 3750
+	4250 4600 4100 4600
 Wire Wire Line
-	4550 3450 4400 3450
+	4250 4300 4100 4300
 Wire Wire Line
-	7700 4700 7550 4700
+	7400 5550 7250 5550
 Wire Wire Line
-	7700 4400 7550 4400
+	7400 5250 7250 5250
 Wire Wire Line
-	7700 4100 7550 4100
+	7400 4950 7250 4950
 Wire Wire Line
-	7700 3800 7550 3800
+	7400 4650 7250 4650
 Wire Wire Line
-	7700 3500 7550 3500
+	7400 4350 7250 4350
 Wire Wire Line
-	7700 3200 7550 3200
+	7400 4050 7250 4050
 Wire Wire Line
-	7550 3050 7700 3050
+	7250 3900 7400 3900
 Wire Wire Line
-	7550 3350 7700 3350
+	7250 4200 7400 4200
 Wire Wire Line
-	7550 3650 7700 3650
+	7250 4500 7400 4500
 Wire Wire Line
-	7550 3950 7700 3950
+	7250 4800 7400 4800
 Wire Wire Line
-	7550 4250 7700 4250
+	7250 5100 7400 5100
 Wire Wire Line
-	7550 4550 7700 4550
+	7250 5400 7400 5400
 Wire Wire Line
-	4400 3300 4550 3300
+	4100 4150 4250 4150
 Wire Wire Line
-	4400 3600 4550 3600
+	4100 4450 4250 4450
 Wire Wire Line
-	4400 3900 4550 3900
+	4100 4750 4250 4750
 Wire Wire Line
-	4400 4350 4550 4350
+	4100 5200 4250 5200
 Wire Wire Line
-	4400 4950 4550 4950
+	4100 5800 4250 5800
 Wire Wire Line
-	6550 4050 6700 4050
-Text GLabel 4400 3300 0    60   Input ~ 0
+	6250 4900 6400 4900
+Text GLabel 4100 4150 0    60   Input ~ 0
 SEG7
-Text GLabel 4400 4950 0    60   Input ~ 0
+Text GLabel 4100 5800 0    60   Input ~ 0
 SEG6
-Text GLabel 4400 3900 0    60   Input ~ 0
+Text GLabel 4100 4750 0    60   Input ~ 0
 SEG5
-Text GLabel 4400 3750 0    60   Input ~ 0
+Text GLabel 4100 4600 0    60   Input ~ 0
 SEG4
-Text GLabel 4400 4800 0    60   Input ~ 0
+Text GLabel 4100 5650 0    60   Input ~ 0
 SEG3
-Text GLabel 4400 4200 0    60   Input ~ 0
+Text GLabel 4100 5050 0    60   Input ~ 0
 SEG2
-Text GLabel 4400 4350 0    60   Input ~ 0
+Text GLabel 4100 5200 0    60   Input ~ 0
 SEG1
-Text GLabel 6700 4050 2    60   Input ~ 0
+Text GLabel 6400 4900 2    60   Input ~ 0
 SEG0
-Text GLabel 4400 3600 0    60   Input ~ 0
+Text GLabel 4100 4450 0    60   Input ~ 0
 COM3
-Text GLabel 4400 3450 0    60   Input ~ 0
+Text GLabel 4100 4300 0    60   Input ~ 0
 COM2
-Text GLabel 6700 3300 2    60   Input ~ 0
+Text GLabel 6400 4150 2    60   Input ~ 0
 COM1
-Text GLabel 6700 3450 2    60   Input ~ 0
+Text GLabel 6400 4300 2    60   Input ~ 0
 COM0
-Text GLabel 7550 4700 0    60   Input ~ 0
+Text GLabel 7250 5550 0    60   Input ~ 0
 SEG7
-Text GLabel 7550 4550 0    60   Input ~ 0
+Text GLabel 7250 5400 0    60   Input ~ 0
 SEG6
-Text GLabel 7550 4400 0    60   Input ~ 0
+Text GLabel 7250 5250 0    60   Input ~ 0
 SEG5
-Text GLabel 7550 4250 0    60   Input ~ 0
+Text GLabel 7250 5100 0    60   Input ~ 0
 SEG4
-Text GLabel 7550 4100 0    60   Input ~ 0
+Text GLabel 7250 4950 0    60   Input ~ 0
 SEG3
-Text GLabel 7550 3950 0    60   Input ~ 0
+Text GLabel 7250 4800 0    60   Input ~ 0
 SEG2
-Text GLabel 7550 3800 0    60   Input ~ 0
+Text GLabel 7250 4650 0    60   Input ~ 0
 SEG1
-Text GLabel 7550 3650 0    60   Input ~ 0
+Text GLabel 7250 4500 0    60   Input ~ 0
 SEG0
-Text GLabel 7550 3500 0    60   Input ~ 0
+Text GLabel 7250 4350 0    60   Input ~ 0
 COM3
-Text GLabel 7550 3350 0    60   Input ~ 0
+Text GLabel 7250 4200 0    60   Input ~ 0
 COM2
-Text GLabel 7550 3200 0    60   Input ~ 0
+Text GLabel 7250 4050 0    60   Input ~ 0
 COM1
-Text GLabel 7550 3050 0    60   Input ~ 0
+Text GLabel 7250 3900 0    60   Input ~ 0
 COM0
 $Comp
 L LCD-S401M16KR J?
 U 1 1 50FF4B2C
-P 8100 3850
-F 0 "J?" H 8100 2750 60  0000 C CNN
-F 1 "LCD-S401M16KR" H 8100 4900 60  0000 C CNN
-	1    8100 3850
+P 7800 4700
+F 0 "J?" H 7800 3600 60  0000 C CNN
+F 1 "LCD-S401M16KR" H 7800 5750 60  0000 C CNN
+	1    7800 4700
 	-1   0    0    -1  
 $EndComp
 $Comp
 L PIC16LF1933-I/SS U?
 U 1 1 50FF48E1
-P 5550 3950
-F 0 "U?" H 5550 2700 60  0000 C CNN
-F 1 "PIC16LF1933-I/SS" H 5550 5100 60  0000 C CNN
-	1    5550 3950
+P 5250 4800
+F 0 "U?" H 5250 3550 60  0000 C CNN
+F 1 "PIC16LF1933-I/SS" H 5250 5950 60  0000 C CNN
+	1    5250 4800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
