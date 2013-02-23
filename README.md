@@ -24,6 +24,10 @@ opamp:
 ----------
 http://www.ti.com/product/ts321
 
+button:
+----------
+http://www.mouser.com/Search/ProductDetail.aspx?R=1571621-1virtualkey50660000virtualkey506-1571621-1
+
 ucurrent:
 ----------
 http://www.alternatezone.com/electronics/ucurrent/uCurrent%20Schematic.png
