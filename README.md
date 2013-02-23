@@ -13,7 +13,7 @@ http://www.mouser.com/ProductDetail/Lumex/LCD-S401M16KR/?qs=%2fha2pyFadui2180vSN
 
 micro
 ----------
-http://www.mouser.com/ProductDetail/Microchip-Technology/PIC16LF1933-I-SS/?qs=sGAEpiMZZMvqv2n3s2xjsW9WJ%2f%2fUanLT4aLJtPlsxIM%3d
+http://www.mouser.com/ProductDetail/Microchip-Technology/PIC16F1933-I-SS/?qs=sGAEpiMZZMvqv2n3s2xjsW9WJ%2f%2fUanLTKzVwRV2X66c%3d
 http://ww1.microchip.com/downloads/en/DeviceDoc/41575C.pdf
 
 sns resist:
