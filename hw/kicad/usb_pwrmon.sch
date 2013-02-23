@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/23/2013 11:41:21 AM
+EESchema Schematic File Version 2  date 2/23/2013 11:57:56 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -46,23 +46,23 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
+	10650 5100 10650 4950
+Wire Wire Line
+	10650 4950 10500 4950
+Wire Wire Line
 	2500 4150 2350 4150
 Wire Wire Line
 	2500 4450 2350 4450
 Wire Wire Line
 	2500 4900 2350 4900
 Wire Wire Line
-	9550 5400 9400 5400
+	8850 5700 9000 5700
 Wire Wire Line
-	9400 5850 9550 5850
-Wire Wire Line
-	9400 4350 9550 4350
+	8850 4200 9000 4200
 Wire Wire Line
 	5100 2350 4950 2350
 Wire Wire Line
 	2350 2550 2500 2550
-Wire Wire Line
-	7250 4200 7400 4200
 Wire Wire Line
 	5100 2050 4800 2050
 Wire Wire Line
@@ -77,17 +77,17 @@ Wire Wire Line
 Wire Notes Line
 	1500 1600 1500 5300
 Wire Wire Line
-	9400 5250 9550 5250
+	8850 5100 9000 5100
 Wire Wire Line
-	7250 6150 7400 6150
+	6700 6000 6850 6000
 Wire Wire Line
-	7250 5550 7400 5550
+	6700 5400 6850 5400
 Wire Wire Line
-	7250 5100 7400 5100
+	6700 4950 6850 4950
 Wire Wire Line
-	7250 4800 7400 4800
+	6700 4650 6850 4650
 Wire Wire Line
-	7250 4500 7400 4500
+	6700 4350 6850 4350
 Wire Wire Line
 	8500 2900 8650 2900
 Wire Wire Line
@@ -113,17 +113,17 @@ Wire Wire Line
 Wire Wire Line
 	8650 3050 8500 3050
 Wire Wire Line
-	7400 4650 7250 4650
+	6850 4500 6700 4500
 Wire Wire Line
-	7400 4950 7250 4950
+	6850 4800 6700 4800
 Wire Wire Line
-	7400 5400 7250 5400
+	6850 5250 6700 5250
 Wire Wire Line
-	7400 6000 7250 6000
+	6850 5850 6700 5850
 Wire Wire Line
-	9550 4500 9400 4500
+	9000 4350 8850 4350
 Wire Wire Line
-	9550 4650 9400 4650
+	9000 4500 8850 4500
 Wire Notes Line
 	6100 1550 6100 3150
 Wire Wire Line
@@ -136,9 +136,9 @@ Wire Wire Line
 Wire Wire Line
 	4950 2500 4950 2800
 Wire Wire Line
-	7400 5250 6800 5250
+	6850 5100 6250 5100
 Wire Wire Line
-	6800 5250 6800 5400
+	6250 5100 6250 5250
 Wire Wire Line
 	4950 1900 4950 2050
 Connection ~ 4950 2050
@@ -147,13 +147,13 @@ Wire Wire Line
 Wire Wire Line
 	5100 2200 4950 2200
 Wire Wire Line
-	9550 4200 9400 4200
+	9000 4050 8850 4050
 Wire Wire Line
-	9550 5700 9400 5700
+	9000 5550 8850 5550
 Wire Wire Line
-	9400 5550 9900 5550
+	8850 5400 9350 5400
 Wire Wire Line
-	9900 5550 9900 5700
+	9350 5400 9350 5550
 Wire Wire Line
 	2350 4750 2500 4750
 Wire Wire Line
@@ -161,24 +161,67 @@ Wire Wire Line
 Connection ~ 2500 4900
 Wire Wire Line
 	2350 4300 2500 4300
+Wire Wire Line
+	9000 4650 8850 4650
+Wire Wire Line
+	6850 4050 6700 4050
+Wire Wire Line
+	9900 5450 9600 5450
+Wire Wire Line
+	9600 5450 9600 5250
+Wire Wire Line
+	9600 5250 8850 5250
+Connection ~ 9750 5450
+Wire Wire Line
+	9900 4950 8850 4950
+Connection ~ 9750 4950
+$Comp
+L GND #PWR?
+U 1 1 5128F432
+P 10650 5100
+F 0 "#PWR?" H 10650 5100 30  0001 C CNN
+F 1 "GND" H 10650 5030 30  0001 C CNN
+	1    10650 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5128F416
+P 9750 5200
+F 0 "R?" V 9830 5200 50  0000 C CNN
+F 1 "R" V 9750 5200 50  0000 C CNN
+	1    9750 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 5128F376
+P 10200 4950
+F 0 "SW?" H 10350 5060 50  0000 C CNN
+F 1 "SW_PUSH" H 10200 4870 50  0000 C CNN
+	1    10200 4950
+	1    0    0    -1  
+$EndComp
+Text GLabel 9000 4650 2    60   Input ~ 0
+ADC_SNS
 $Comp
 L GND #PWR?
 U 1 1 5128F037
-P 9900 5700
-F 0 "#PWR?" H 9900 5700 30  0001 C CNN
-F 1 "GND" H 9900 5630 30  0001 C CNN
-	1    9900 5700
+P 9350 5550
+F 0 "#PWR?" H 9350 5550 30  0001 C CNN
+F 1 "GND" H 9350 5480 30  0001 C CNN
+	1    9350 5550
 	1    0    0    -1  
 $EndComp
-Text GLabel 9550 5400 2    60   Input ~ 0
+Text GLabel 9900 5450 2    60   Input ~ 0
 VBUS
-Text GLabel 9550 5850 2    60   Input ~ 0
+Text GLabel 9000 5700 2    60   Input ~ 0
 TX
-Text GLabel 9550 5700 2    60   Input ~ 0
+Text GLabel 9000 5550 2    60   Input ~ 0
 RX
-Text GLabel 9550 4350 2    60   Input ~ 0
+Text GLabel 9000 4200 2    60   Input ~ 0
 ICSPCLK
-Text GLabel 9550 4200 2    60   Input ~ 0
+Text GLabel 9000 4050 2    60   Input ~ 0
 ICSPDAT
 Text GLabel 4950 2350 0    60   Input ~ 0
 D-TRGT
@@ -192,7 +235,7 @@ Text GLabel 2500 2550 2    60   Input ~ 0
 D-TRGT
 Text GLabel 2500 2400 2    60   Input ~ 0
 D+TRGT
-Text GLabel 7250 4200 0    60   Input ~ 0
+Text GLabel 6700 4050 0    60   Input ~ 0
 VBUS
 Text GLabel 4950 1900 1    60   Input ~ 0
 VSENSE
@@ -205,10 +248,10 @@ VBUS
 $Comp
 L GND #PWR?
 U 1 1 5128E890
-P 6800 5400
-F 0 "#PWR?" H 6800 5400 30  0001 C CNN
-F 1 "GND" H 6800 5330 30  0001 C CNN
-	1    6800 5400
+P 6250 5250
+F 0 "#PWR?" H 6250 5250 30  0001 C CNN
+F 1 "GND" H 6250 5180 30  0001 C CNN
+	1    6250 5250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -278,29 +321,29 @@ F 1 "USB_NP_1" H 2000 3050 60  0000 C CNN
 	1    2000 2550
 	1    0    0    -1  
 $EndComp
-Text GLabel 7250 4500 0    60   Input ~ 0
+Text GLabel 6700 4350 0    60   Input ~ 0
 SEG7
-Text GLabel 7250 6150 0    60   Input ~ 0
+Text GLabel 6700 6000 0    60   Input ~ 0
 SEG6
-Text GLabel 7250 5100 0    60   Input ~ 0
+Text GLabel 6700 4950 0    60   Input ~ 0
 SEG5
-Text GLabel 7250 4950 0    60   Input ~ 0
+Text GLabel 6700 4800 0    60   Input ~ 0
 SEG4
-Text GLabel 7250 6000 0    60   Input ~ 0
+Text GLabel 6700 5850 0    60   Input ~ 0
 SEG3
-Text GLabel 7250 5400 0    60   Input ~ 0
+Text GLabel 6700 5250 0    60   Input ~ 0
 SEG2
-Text GLabel 7250 5550 0    60   Input ~ 0
+Text GLabel 6700 5400 0    60   Input ~ 0
 SEG1
-Text GLabel 9550 5250 2    60   Input ~ 0
+Text GLabel 9000 5100 2    60   Input ~ 0
 SEG0
-Text GLabel 7250 4800 0    60   Input ~ 0
+Text GLabel 6700 4650 0    60   Input ~ 0
 COM3
-Text GLabel 7250 4650 0    60   Input ~ 0
+Text GLabel 6700 4500 0    60   Input ~ 0
 COM2
-Text GLabel 9550 4500 2    60   Input ~ 0
+Text GLabel 9000 4350 2    60   Input ~ 0
 COM1
-Text GLabel 9550 4650 2    60   Input ~ 0
+Text GLabel 9000 4500 2    60   Input ~ 0
 COM0
 Text GLabel 8500 3050 0    60   Input ~ 0
 SEG7
@@ -338,10 +381,10 @@ $EndComp
 $Comp
 L PIC16LF1933-I/SS U?
 U 1 1 50FF48E1
-P 8400 5150
-F 0 "U?" H 8400 3900 60  0000 C CNN
-F 1 "PIC16F1933-I/SS" H 8400 6300 60  0000 C CNN
-	1    8400 5150
+P 7850 5000
+F 0 "U?" H 7850 3750 60  0000 C CNN
+F 1 "PIC16F1933-I/SS" H 7850 6150 60  0000 C CNN
+	1    7850 5000
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
