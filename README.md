@@ -28,6 +28,14 @@ button:
 ----------
 http://www.mouser.com/Search/ProductDetail.aspx?R=1571621-1virtualkey50660000virtualkey506-1571621-1
 
+ftdi:
+----------
+http://www.mouser.com/ProductDetail/FTDI/FT230XS-R/?qs=sGAEpiMZZMvVkErl6zY%252bqR%252b6A%252bu%2f1HB5
+
+cp2102:
+----------
+http://www.mouser.com/ProductDetail/Silicon-Labs/CP2102-GM/?qs=sGAEpiMZZMtUpMOmSPzkH4LNgvJCyH6m
+
 ucurrent:
 ----------
 http://www.alternatezone.com/electronics/ucurrent/uCurrent%20Schematic.png
