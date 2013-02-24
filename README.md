@@ -23,6 +23,8 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 opamp:
 ----------
 http://www.ti.com/product/ts321
+http://www.ti.com/product/opa378
+http://www.mouser.com/ProductDetail/Texas-Instruments/OPA378AIDBVT/?qs=sGAEpiMZZMtOXy69nW9rMxQO2pQeQZAlZKoPnQbLHy0%3d
 
 button:
 ----------
