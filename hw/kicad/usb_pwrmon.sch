@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 2/24/2013 11:38:50 AM
+EESchema Schematic File Version 2  date 2/26/2013 10:52:03 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "24 feb 2013"
+Date "26 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,8 +45,13 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 2400 7400 0    60   ~ 0
-NOPOP
+Connection ~ 3500 3400
+Wire Wire Line
+	3500 3250 3500 4000
+Wire Wire Line
+	3500 4000 5150 4000
+Wire Wire Line
+	5150 4000 5150 3300
 Wire Notes Line
 	3950 5050 3950 7300
 Wire Notes Line
@@ -68,11 +73,8 @@ Wire Wire Line
 	5250 3300 5000 3300
 Wire Wire Line
 	4400 3800 4800 3800
-Connection ~ 4300 2550
 Wire Wire Line
 	3900 3200 3900 2550
-Wire Wire Line
-	3900 2550 5150 2550
 Wire Wire Line
 	4300 1900 4700 1900
 Wire Wire Line
@@ -80,9 +82,7 @@ Wire Wire Line
 Wire Wire Line
 	4400 3750 4400 3900
 Wire Wire Line
-	3900 3400 3500 3400
-Wire Wire Line
-	3500 3400 3500 3250
+	3500 3400 3900 3400
 Connection ~ 4700 1450
 Wire Wire Line
 	4050 1450 3600 1450
@@ -265,10 +265,6 @@ Wire Wire Line
 Wire Wire Line
 	3850 2200 3850 1450
 Connection ~ 3850 1450
-Wire Wire Line
-	5150 2550 5150 3300
-Wire Wire Line
-	4300 2550 4300 2400
 Connection ~ 4400 2800
 Connection ~ 4400 3800
 Wire Wire Line
@@ -287,6 +283,12 @@ Wire Wire Line
 	5150 6550 5000 6550
 Wire Wire Line
 	5300 6850 5450 6850
+Wire Wire Line
+	3900 2550 4300 2550
+Wire Wire Line
+	4300 2550 4300 2400
+Text Notes 2400 7400 0    60   ~ 0
+NOPOP
 Text GLabel 5150 6700 0    60   Input ~ 0
 ICSPDAT
 Text GLabel 5300 6850 0    60   Input ~ 0
