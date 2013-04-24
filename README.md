@@ -22,6 +22,9 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 ----------
+opa2330 2 channel
+http://www.digikey.com/product-detail/en/OPA2330AIDGKT/296-25304-2-ND/2179351
+
 http://www.ti.com/product/ts321
 http://www.ti.com/product/opa378
 http://www.mouser.com/ProductDetail/Texas-Instruments/OPA378AIDBVT/?qs=sGAEpiMZZMtOXy69nW9rMxQO2pQeQZAlZKoPnQbLHy0%3d
