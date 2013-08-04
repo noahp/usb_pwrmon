@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 8/4/2013 11:17:44 AM
+Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 8/4/2013 11:21:23 AM
 
 BeginCmp
 TimeStamp = /512A23CC;
@@ -52,57 +52,57 @@ EndCmp
 BeginCmp
 TimeStamp = /512A24C5;
 Reference = P1;
-ValeurCmp = TX;
-IdModule  = ;
+ValeurCmp = MCLR;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /5128FA8C;
 Reference = P2;
 ValeurCmp = TX;
-IdModule  = ;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24C9;
 Reference = P3;
-ValeurCmp = TX;
-IdModule  = ;
+ValeurCmp = VBUS;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /5128FA72;
 Reference = P4;
 ValeurCmp = RX;
-IdModule  = ;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24CC;
 Reference = P5;
-ValeurCmp = TX;
-IdModule  = ;
+ValeurCmp = GND;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /5128FA79;
 Reference = P6;
 ValeurCmp = GND;
-IdModule  = ;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24CF;
 Reference = P7;
-ValeurCmp = TX;
-IdModule  = ;
+ValeurCmp = ICSPDAT;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24D2;
 Reference = P8;
-ValeurCmp = TX;
-IdModule  = ;
+ValeurCmp = ICSPCLK;
+IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp

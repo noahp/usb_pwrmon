@@ -1,16 +1,6 @@
-update=1/22/2013 9:19:53 PM
+update=8/4/2013 11:21:00 AM
 version=1
-last_client=eeschema
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
+last_client=cvpcb
 [pcbnew]
 version=1
 PadDrlX=320
@@ -66,7 +56,6 @@ MaxLnkS=3
 ShowRat=0
 ShowMRa=1
 [pcbnew/libraries]
-LibDir=
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -77,6 +66,8 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
+LibName11=kicadlib/kicadlib
+LibDir=
 [general]
 version=1
 [eeschema]
@@ -142,3 +133,8 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=usb_pwrmon
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
