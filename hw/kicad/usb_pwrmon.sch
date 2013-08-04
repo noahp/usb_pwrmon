@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 8/4/2013 11:56:05 AM
+EESchema Schematic File Version 2  date 8/4/2013 12:30:22 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,6 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:usb_pwrmon
+LIBS:kicadlib
 LIBS:usb_pwrmon-cache
 EELAYER 27 0
 EELAYER END
@@ -170,30 +171,19 @@ F 3 "" H 6350 4850 60  0001 C CNN
 $EndComp
 Text GLabel 5550 3700 0    60   Input ~ 0
 VBUS
-$Comp
-L R R1
-U 1 1 513DDCF4
-P 4050 4050
-F 0 "R1" V 4130 4050 50  0000 C CNN
-F 1 "R" V 4050 4050 50  0000 C CNN
-F 2 "" H 4050 4050 60  0001 C CNN
-F 3 "" H 4050 4050 60  0001 C CNN
-	1    4050 4050
-	-1   0    0    1   
-$EndComp
-Text GLabel 4050 3700 0    60   Input ~ 0
+Text GLabel 2200 3850 0    60   Input ~ 0
 VLOAD+
-Text GLabel 4050 4400 0    60   Input ~ 0
+Text GLabel 2200 4000 0    60   Input ~ 0
 VLOAD-
 $Comp
 L GND #PWR03
 U 1 1 513DE10D
-P 4450 4600
-F 0 "#PWR03" H 4450 4600 30  0001 C CNN
-F 1 "GND" H 4450 4530 30  0001 C CNN
-F 2 "" H 4450 4600 60  0001 C CNN
-F 3 "" H 4450 4600 60  0001 C CNN
-	1    4450 4600
+P 4150 4600
+F 0 "#PWR03" H 4150 4600 30  0001 C CNN
+F 1 "GND" H 4150 4530 30  0001 C CNN
+F 2 "" H 4150 4600 60  0001 C CNN
+F 3 "" H 4150 4600 60  0001 C CNN
+	1    4150 4600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -204,18 +194,14 @@ Wire Wire Line
 	5550 3700 5550 3800
 Connection ~ 6350 4250
 Wire Wire Line
-	4050 3700 4050 3800
-Wire Wire Line
 	6150 4250 6750 4250
 Wire Wire Line
 	4950 4150 5050 4150
 Text GLabel 4950 4350 0    60   Input ~ 0
-VLOAD+
+VLOAD_MEAS
 Wire Wire Line
 	5050 4350 4950 4350
-Wire Wire Line
-	4450 4150 4450 4600
-Text Notes 3600 4100 0    60   ~ 0
+Text Notes 2800 3600 0    60   ~ 0
 shunt
 Wire Wire Line
 	5000 4150 5000 3500
@@ -234,8 +220,6 @@ Wire Wire Line
 Wire Wire Line
 	6600 4800 6350 4800
 Connection ~ 6350 4800
-Wire Wire Line
-	4050 4400 4050 4300
 $Comp
 L AD8591 U1
 U 1 1 51FE785A
@@ -276,7 +260,7 @@ VLOAD+
 Wire Wire Line
 	5150 2600 5000 2600
 Text GLabel 4850 2900 2    60   Input ~ 0
-ADC_IN
+ADC_SNS_1
 Wire Wire Line
 	5000 2750 4850 2750
 Wire Wire Line
@@ -296,4 +280,42 @@ F 3 "" H 5300 2350 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	5300 2300 5300 2350
+$Comp
+L LVK12-SHUNT R1
+U 1 1 51FE7DAB
+P 2900 3950
+F 0 "R1" H 2900 3750 60  0000 C CNN
+F 1 "LVK12-SHUNT" H 2900 4150 60  0000 C CNN
+F 2 "" H 2900 3950 60  0000 C CNN
+F 3 "" H 2900 3950 60  0000 C CNN
+	1    2900 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 3850 2350 3850
+Wire Wire Line
+	2350 4000 2200 4000
+Wire Wire Line
+	4450 4150 4150 4150
+Wire Wire Line
+	4150 4150 4150 4600
+$Comp
+L GND #PWR05
+U 1 1 51FE7ECB
+P 3600 4100
+F 0 "#PWR05" H 3600 4100 30  0001 C CNN
+F 1 "GND" H 3600 4030 30  0001 C CNN
+F 2 "" H 3600 4100 60  0001 C CNN
+F 3 "" H 3600 4100 60  0001 C CNN
+	1    3600 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 4000 3600 4000
+Text GLabel 3600 3850 2    60   Input ~ 0
+VLOAD_MEAS
+Wire Wire Line
+	3600 3850 3450 3850
+Wire Wire Line
+	3600 4000 3600 4100
 $EndSCHEMATC
