@@ -1,6 +1,6 @@
 usb_pwrmon
 ==========
-Simple PIC-based usb port current/voltage/power measurement with integrated LCD display + auto-on backlight.
+Simple PIC-based usb port current/voltage/power measurement with LCD display.
 
 comp info
 ==========
@@ -9,7 +9,10 @@ display
 ----------
 http://www.mouser.com/ProductDetail/Lumex/LCD-S401M16KR/?qs=%2fha2pyFadui2180vSNa5d9A6dzF3P9ghCC0kOgr4NdRbdwUyJ89YAQ%3d%3d
 
-- led backlight, use it as ambient light sensor too? and disableable (button)
+or oled
+----------
+http://www.ebay.com/itm/0-96-Parallel-SPI-IIC-I2C-12864-128-64-Yellow-Blue-OLED-LED-Display-for-Arduino-/370856605767?pt=LH_DefaultDomain_0&hash=item5658c6b847  
+http://www.ebay.com/itm/CRIUS-CO-16-OLED-Display-Module-v1-0-/161066293471?pt=Radio_Control_Parts_Accessories&hash=item25804c98df  
 
 micro
 ----------
