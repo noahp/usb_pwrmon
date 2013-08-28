@@ -27,6 +27,7 @@ opamp:
 ----------
 tested  
 http://www.digikey.com/product-detail/en/AD8591ARTZ-REEL7/AD8591ARTZ-REEL7TR-ND/621365  
+AD8515 better (no shutdown, not needed)  
 
 opa2330 2 channel
 http://www.digikey.com/product-detail/en/OPA2330AIDGKT/296-25304-2-ND/2179351
