@@ -25,6 +25,9 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 ----------
+tested  
+http://www.digikey.com/product-detail/en/AD8591ARTZ-REEL7/AD8591ARTZ-REEL7TR-ND/621365  
+
 opa2330 2 channel
 http://www.digikey.com/product-detail/en/OPA2330AIDGKT/296-25304-2-ND/2179351
 
