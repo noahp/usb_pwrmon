@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 10 Oct 2013 07:58:54 PM EDT
+EESchema Schematic File Version 2  date Thu 10 Oct 2013 08:25:03 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "10 oct 2013"
+Date "11 oct 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -104,10 +104,10 @@ Wire Wire Line
 Wire Wire Line
 	5050 3850 5050 4150
 $Comp
-L MAX9636 U?
+L MAX9636 U1
 U 1 1 52573E1F
 P 5450 4250
-F 0 "U?" H 5250 4700 60  0000 C CNN
+F 0 "U1" H 5250 4700 60  0000 C CNN
 F 1 "MAX9636" H 5300 3800 60  0000 C CNN
 	1    5450 4250
 	1    0    0    -1  

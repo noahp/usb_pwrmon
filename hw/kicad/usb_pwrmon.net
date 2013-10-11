@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Thu 10 Oct 2013 08:12:46 PM EDT
+# EESchema Netlist Version 1.1 created  Thu 10 Oct 2013 08:42:27 PM EDT
 (
  ( /512A23CC SM0603 C1 C
   ( 1 ADC_SNS_1 )
@@ -19,7 +19,7 @@
  ( /5128FA79 TEST_0.100 P8 GND
   ( 1 GND )
  )
- ( /51FE7DAB lvk12 R1 LVK12-SHUNT
+ ( /51FE7DAB $noname$ R1 LVK12-SHUNT
   ( 1 VLOAD+ )
   ( 2 VLOAD- )
   ( 3 GND )
