@@ -383,7 +383,7 @@
     )
   )
 
-  (gr_text "shunt tst brd\ngit.io/oB40EQ\nv0.\noct-2013" (at 213.36 99.949) (layer F.SilkS)
+  (gr_text "shunt tst brd\ngit.io/oB40EQ\nv0.2\noct-2013" (at 213.36 99.949) (layer F.SilkS)
     (effects (font (size 0.5 0.5) (thickness 0.125)) (justify left))
   )
   (gr_line (start 212.344 113.792) (end 212.344 98.552) (angle 90) (layer Edge.Cuts) (width 0.15))
