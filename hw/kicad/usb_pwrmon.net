@@ -1,49 +1,49 @@
-# EESchema Netlist Version 1.1 created  Thu 10 Oct 2013 08:01:07 PM EDT
+# EESchema Netlist Version 1.1 created  Thu 10 Oct 2013 08:12:46 PM EDT
 (
- ( /52573E1F $noname  U1 MAX9636 {Lib=MAX9636}
-  (    1 N-000006 )
-  (    2 GND )
-  (    3 N-000003 )
-  (    4 ADC_SNS_1 )
-  (    5 VBUS )
-  (    6 VBUS )
+ ( /512A23CC SM0603 C1 C
+  ( 1 ADC_SNS_1 )
+  ( 2 GND )
  )
- ( /512A24D2 $noname  P4 VLOAD- {Lib=TST}
-  (    1 VLOAD- )
+ ( /512A24C5 TEST_0.100 P1 VLOAD+
+  ( 1 VLOAD+ )
  )
- ( /512A24CC $noname  P3 ADC_IN {Lib=TST}
-  (    1 ADC_SNS_1 )
+ ( /512A24C9 TEST_0.100 P2 VBUS
+  ( 1 VBUS )
  )
- ( /512A24C9 $noname  P2 VBUS {Lib=TST}
-  (    1 VBUS )
+ ( /512A24CC TEST_0.100 P3 ADC_IN
+  ( 1 ADC_SNS_1 )
  )
- ( /512A24C5 $noname  P1 VLOAD+ {Lib=TST}
-  (    1 VLOAD+ )
+ ( /512A24D2 TEST_0.100 P4 VLOAD-
+  ( 1 VLOAD- )
  )
- ( /512A23CC $noname  C1 C {Lib=C}
-  (    1 ADC_SNS_1 )
-  (    2 GND )
+ ( /5128FA79 TEST_0.100 P8 GND
+  ( 1 GND )
  )
- ( /512A232E $noname  R2 R {Lib=R}
-  (    1 GND )
-  (    2 N-000003 )
+ ( /51FE7DAB lvk12 R1 LVK12-SHUNT
+  ( 1 VLOAD+ )
+  ( 2 VLOAD- )
+  ( 3 GND )
+  ( 4 N-000006 )
  )
- ( /512A2310 $noname  R3 R {Lib=R}
-  (    1 N-000003 )
-  (    2 ADC_SNS_1 )
+ ( /512A232E SM0603 R2 R
+  ( 1 GND )
+  ( 2 N-000003 )
  )
- ( /5128FA79 $noname  P8 GND {Lib=TST}
-  (    1 GND )
+ ( /512A2310 SM0603 R3 R
+  ( 1 N-000003 )
+  ( 2 ADC_SNS_1 )
  )
- ( /513DD91F $noname  R4 R {Lib=R}
-  (    1 GND )
-  (    2 ADC_SNS_1 )
+ ( /513DD91F SM0603 R4 R
+  ( 1 GND )
+  ( 2 ADC_SNS_1 )
  )
- ( /51FE7DAB $noname  R1 LVK12-SHUNT {Lib=LVK12-SHUNT}
-  (    1 VLOAD+ )
-  (    2 VLOAD- )
-  (    3 GND )
-  (    4 N-000006 )
+ ( /52573E1F MAX9636 U1 MAX9636
+  ( 1 N-000006 )
+  ( 2 GND )
+  ( 3 N-000003 )
+  ( 4 ADC_SNS_1 )
+  ( 5 VBUS )
+  ( 6 VBUS )
  )
 )
 *
@@ -76,36 +76,3 @@ $component R4
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "GND" "GND"
- R1 3
- U1 2
- R2 1
- R4 1
- P8 1
- C1 2
-Net 2 "ADC_SNS_1" "ADC_SNS_1"
- R3 2
- R4 2
- U1 4
- C1 1
- P3 1
-Net 3 "" ""
- U1 3
- R2 2
- R3 1
-Net 4 "VLOAD-" "VLOAD-"
- R1 2
- P4 1
-Net 5 "VLOAD+" "VLOAD+"
- P1 1
- R1 1
-Net 6 "" ""
- U1 1
- R1 4
-Net 7 "VBUS" "VBUS"
- U1 6
- U1 5
- P2 1
-}
-#End

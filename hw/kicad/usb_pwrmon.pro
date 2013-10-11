@@ -1,6 +1,6 @@
-update=Thu 10 Oct 2013 07:53:24 PM EDT
+update=Thu 10 Oct 2013 08:12:42 PM EDT
 version=1
-last_client=eeschema
+last_client=cvpcb
 [pcbnew]
 version=1
 PadDrlX=320
@@ -67,14 +67,10 @@ LibName8=valves
 LibName9=led
 LibName10=dip_sockets
 LibName11=kicadlib/kicadlib
+LibName12=MAX9636
 LibDir=
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -139,3 +135,8 @@ LibName29=contrib
 LibName30=valves
 LibName31=usb_pwrmon
 LibName32=kicadlib/kicadlib
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms

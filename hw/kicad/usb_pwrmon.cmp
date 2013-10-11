@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 8/4/2013 12:18:29 PM
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Thu 10 Oct 2013 08:12:46 PM EDT
 
 BeginCmp
 TimeStamp = /512A23CC;
@@ -71,17 +71,10 @@ IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /51FE78C0;
-Reference = R5;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /51FE785A;
+TimeStamp = /52573E1F;
 Reference = U1;
-ValeurCmp = AD8591;
-IdModule  = SOT23_6;
+ValeurCmp = MAX9636;
+IdModule  = MAX9636;
 EndCmp
 
 EndListe
