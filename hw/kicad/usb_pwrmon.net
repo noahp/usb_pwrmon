@@ -1,168 +1,111 @@
-(export (version D)
-  (design
-    (source C:\dev\usb_pwrmon\hw\kicad\usb_pwrmon.sch)
-    (date "8/4/2013 12:30:26 PM")
-    (tool "eeschema (2013-03-31 BZR 4008)-stable"))
-  (components
-    (comp (ref P4)
-      (value VLOAD-)
-      (libsource (lib device) (part TST))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A24D2))
-    (comp (ref P3)
-      (value ADC_IN)
-      (libsource (lib device) (part TST))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A24CC))
-    (comp (ref P2)
-      (value VBUS)
-      (libsource (lib device) (part TST))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A24C9))
-    (comp (ref P1)
-      (value VLOAD+)
-      (libsource (lib device) (part TST))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A24C5))
-    (comp (ref C1)
-      (value C)
-      (libsource (lib device) (part C))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A23CC))
-    (comp (ref R2)
-      (value R)
-      (libsource (lib device) (part R))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A232E))
-    (comp (ref R3)
-      (value R)
-      (libsource (lib device) (part R))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 512A2310))
-    (comp (ref P8)
-      (value GND)
-      (libsource (lib device) (part TST))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 5128FA79))
-    (comp (ref R4)
-      (value R)
-      (libsource (lib device) (part R))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 513DD91F))
-    (comp (ref U1)
-      (value AD8591)
-      (libsource (lib usb_pwrmon) (part AD8591))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 51FE785A))
-    (comp (ref R5)
-      (value R)
-      (libsource (lib device) (part R))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 51FE78C0))
-    (comp (ref R1)
-      (value LVK12-SHUNT)
-      (libsource (lib kicadlib) (part LVK12-SHUNT))
-      (sheetpath (names /) (tstamps /))
-      (tstamp 51FE7DAB)))
-  (libparts
-    (libpart (lib device) (part C)
-      (description "Condensateur non polarise")
-      (footprints
-        (fp SM*)
-        (fp C?)
-        (fp C1-1))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) C)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistance)
-      (footprints
-        (fp R?)
-        (fp SM0603)
-        (fp SM0805)
-        (fp R?-*)
-        (fp SM1206))
-      (fields
-        (field (name Reference) R)
-        (field (name Value) R)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part TST)
-      (fields
-        (field (name Reference) P)
-        (field (name Value) TST)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name ~) (type passive))))
-    (libpart (lib usb_pwrmon) (part AD8591)
-      (fields
-        (field (name Reference) U)
-        (field (name Value) AD8591)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name OUT) (type input))
-        (pin (num 2) (name V-) (type input))
-        (pin (num 3) (name +IN) (type input))
-        (pin (num 4) (name -IN) (type input))
-        (pin (num 5) (name ~SD) (type input))
-        (pin (num 6) (name V+) (type input))))
-    (libpart (lib kicadlib) (part LVK12-SHUNT)
-      (fields
-        (field (name Reference) R)
-        (field (name Value) LVK12-SHUNT))
-      (pins
-        (pin (num 1) (name 1) (type input))
-        (pin (num 2) (name 2) (type input))
-        (pin (num 3) (name 3) (type input))
-        (pin (num 4) (name 4) (type input)))))
-  (libraries
-    (library (logical device)
-      (uri "C:\\Program Files (x86)\\KiCad\\share\\library\\device.lib"))
-    (library (logical usb_pwrmon)
-      (uri usb_pwrmon.lib))
-    (library (logical kicadlib)
-      (uri kicadlib\kicadlib.lib)))
-  (nets
-    (net (code 1) (name ADC_SNS_1)
-      (node (ref R4) (pin 2))
-      (node (ref R3) (pin 2))
-      (node (ref C1) (pin 1))
-      (node (ref P3) (pin 1))
-      (node (ref U1) (pin 1)))
-    (net (code 2) (name VLOAD+)
-      (node (ref P1) (pin 1))
-      (node (ref R1) (pin 1)))
-    (net (code 3) (name VBUS)
-      (node (ref U1) (pin 6))
-      (node (ref P2) (pin 1)))
-    (net (code 4) (name GND)
-      (node (ref C1) (pin 2))
-      (node (ref R2) (pin 1))
-      (node (ref P8) (pin 1))
-      (node (ref R4) (pin 1))
-      (node (ref R5) (pin 2))
-      (node (ref U1) (pin 2))
-      (node (ref R1) (pin 3)))
-    (net (code 5) (name "")
-      (node (ref R5) (pin 1))
-      (node (ref U1) (pin 5)))
-    (net (code 6) (name VLOAD-)
-      (node (ref P4) (pin 1))
-      (node (ref R1) (pin 2)))
-    (net (code 7) (name VLOAD_MEAS)
-      (node (ref U1) (pin 3))
-      (node (ref R1) (pin 4)))
-    (net (code 8) (name "")
-      (node (ref U1) (pin 4))
-      (node (ref R2) (pin 2))
-      (node (ref R3) (pin 1)))))
+# EESchema Netlist Version 1.1 created  Thu 10 Oct 2013 08:01:07 PM EDT
+(
+ ( /52573E1F $noname  U1 MAX9636 {Lib=MAX9636}
+  (    1 N-000006 )
+  (    2 GND )
+  (    3 N-000003 )
+  (    4 ADC_SNS_1 )
+  (    5 VBUS )
+  (    6 VBUS )
+ )
+ ( /512A24D2 $noname  P4 VLOAD- {Lib=TST}
+  (    1 VLOAD- )
+ )
+ ( /512A24CC $noname  P3 ADC_IN {Lib=TST}
+  (    1 ADC_SNS_1 )
+ )
+ ( /512A24C9 $noname  P2 VBUS {Lib=TST}
+  (    1 VBUS )
+ )
+ ( /512A24C5 $noname  P1 VLOAD+ {Lib=TST}
+  (    1 VLOAD+ )
+ )
+ ( /512A23CC $noname  C1 C {Lib=C}
+  (    1 ADC_SNS_1 )
+  (    2 GND )
+ )
+ ( /512A232E $noname  R2 R {Lib=R}
+  (    1 GND )
+  (    2 N-000003 )
+ )
+ ( /512A2310 $noname  R3 R {Lib=R}
+  (    1 N-000003 )
+  (    2 ADC_SNS_1 )
+ )
+ ( /5128FA79 $noname  P8 GND {Lib=TST}
+  (    1 GND )
+ )
+ ( /513DD91F $noname  R4 R {Lib=R}
+  (    1 GND )
+  (    2 ADC_SNS_1 )
+ )
+ ( /51FE7DAB $noname  R1 LVK12-SHUNT {Lib=LVK12-SHUNT}
+  (    1 VLOAD+ )
+  (    2 VLOAD- )
+  (    3 GND )
+  (    4 N-000006 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "GND" "GND"
+ R1 3
+ U1 2
+ R2 1
+ R4 1
+ P8 1
+ C1 2
+Net 2 "ADC_SNS_1" "ADC_SNS_1"
+ R3 2
+ R4 2
+ U1 4
+ C1 1
+ P3 1
+Net 3 "" ""
+ U1 3
+ R2 2
+ R3 1
+Net 4 "VLOAD-" "VLOAD-"
+ R1 2
+ P4 1
+Net 5 "VLOAD+" "VLOAD+"
+ P1 1
+ R1 1
+Net 6 "" ""
+ U1 1
+ R1 4
+Net 7 "VBUS" "VBUS"
+ U1 6
+ U1 5
+ P2 1
+}
+#End
