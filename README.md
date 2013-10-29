@@ -26,6 +26,8 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 opamp:
 ----------
 max9636 tested, OK  
+http://datasheets.maximintegrated.com/en/ds/MAX9636-MAX9638.pdf  
+  
 alternative MCP6L02, 2 channels:  
 http://www.mouser.com/ProductDetail/Microchip-Technology/MCP6L02T-E-MS/?qs=sGAEpiMZZMtOXy69nW9rMzBuqp96KEkSPNYtdCuClwY%3d
 
