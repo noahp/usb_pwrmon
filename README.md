@@ -12,8 +12,7 @@ http://www.ebay.com/itm/CRIUS-CO-16-OLED-Display-Module-v1-0-/161066293471?pt=Ra
 
 micro
 ----------
-http://www.mouser.com/ProductDetail/Microchip-Technology/PIC16F1936-I-SS/?qs=sGAEpiMZZMvqv2n3s2xjsciDbQPTa%252bnnTenvtEx9Na8%3d
-http://ww1.microchip.com/downloads/en/DeviceDoc/41575C.pdf
+freescale
 
 sns resist:
 ----------
