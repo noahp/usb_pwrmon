@@ -25,16 +25,9 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 ----------
-tested  
-http://www.digikey.com/product-detail/en/AD8591ARTZ-REEL7/AD8591ARTZ-REEL7TR-ND/621365  
-AD8515 better (no shutdown, not needed)  
-
-opa2330 2 channel
-http://www.digikey.com/product-detail/en/OPA2330AIDGKT/296-25304-2-ND/2179351
-
-http://www.ti.com/product/ts321
-http://www.ti.com/product/opa378
-http://www.mouser.com/ProductDetail/Texas-Instruments/OPA378AIDBVT/?qs=sGAEpiMZZMtOXy69nW9rMxQO2pQeQZAlZKoPnQbLHy0%3d
+max9636 tested, OK  
+alternative MCP6L02, 2 channels:  
+http://www.mouser.com/ProductDetail/Microchip-Technology/MCP6L02T-E-MS/?qs=sGAEpiMZZMtOXy69nW9rMzBuqp96KEkSPNYtdCuClwY%3d
 
 button:
 ----------
