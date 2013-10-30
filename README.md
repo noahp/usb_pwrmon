@@ -20,11 +20,9 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 ----------
-max9636 tested, OK  
-http://datasheets.maximintegrated.com/en/ds/MAX9636-MAX9638.pdf  
-  
-alternative MCP6L02, 2 channels:  
-http://www.mouser.com/ProductDetail/Microchip-Technology/MCP6L02T-E-MS/?qs=sGAEpiMZZMtOXy69nW9rMzBuqp96KEkSPNYtdCuClwY%3d
+current sense, fixed at 80 gain:  
+http://www.mouser.com/ProductDetail/Analog-Devices/AD8293G80ARJZ-R7/?qs=sGAEpiMZZMvEn2pkGav3bNYdL9E%2foSzJYdqf7Uk6kdc%3d  
+that's a range of 0-4.125A with a shunt resistor of 0.010 Ohms. assuming 16-bit adc (on freescale kl25), ~15 bits per mA.
 
 button:
 ----------
