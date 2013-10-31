@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-31 BZR 4008)-stable date = 8/4/2013 11:21:23 AM
+Cmp-Mod V01 Created by CvPcb (2013-03-04 BZR 3984)-stable date = 10/11/2013 4:06:49 PM
 
 BeginCmp
 TimeStamp = /512A23CC;
@@ -8,206 +8,80 @@ IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /51486FA2;
-Reference = C2;
-ValeurCmp = C;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FD02;
-Reference = C3;
-ValeurCmp = 0.1uF;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /5127F95A;
-Reference = J1;
-ValeurCmp = USB_A_MALE;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128E61E;
-Reference = J2;
-ValeurCmp = USB_MINI_FEMALE;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /5127F961;
-Reference = J3;
-ValeurCmp = USB_A_FEMALE;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /50FF4B2C;
-Reference = J4;
-ValeurCmp = LCD-S401M16KR;
-IdModule  = ;
-EndCmp
-
-BeginCmp
 TimeStamp = /512A24C5;
 Reference = P1;
-ValeurCmp = MCLR;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FA8C;
-Reference = P2;
-ValeurCmp = TX;
+ValeurCmp = VLOAD+;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24C9;
-Reference = P3;
+Reference = P2;
 ValeurCmp = VBUS;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
-TimeStamp = /5128FA72;
-Reference = P4;
-ValeurCmp = RX;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
 TimeStamp = /512A24CC;
-Reference = P5;
-ValeurCmp = GND;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FA79;
-Reference = P6;
-ValeurCmp = GND;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A24CF;
-Reference = P7;
-ValeurCmp = ICSPDAT;
+Reference = P3;
+ValeurCmp = ADC_IN;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24D2;
-Reference = P8;
-ValeurCmp = ICSPCLK;
+Reference = P4;
+ValeurCmp = VLOAD-;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
-TimeStamp = /5128FC99;
+TimeStamp = /52585AAF;
+Reference = P5;
+ValeurCmp = SHTDN;
+IdModule  = TEST_0.100;
+EndCmp
+
+BeginCmp
+TimeStamp = /5128FA79;
+Reference = P8;
+ValeurCmp = GND;
+IdModule  = TEST_0.100;
+EndCmp
+
+BeginCmp
+TimeStamp = /51FE7DAB;
 Reference = R1;
-ValeurCmp = 27R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FCA1;
-Reference = R2;
-ValeurCmp = 27R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /513DDCF4;
-Reference = R3;
-ValeurCmp = R;
-IdModule  = SM0603;
+ValeurCmp = LVK12-SHUNT;
+IdModule  = lvk12;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A232E;
-Reference = R4;
+Reference = R2;
 ValeurCmp = R;
 IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A2310;
-Reference = R5;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /51486FAE;
-Reference = R6;
+Reference = R3;
 ValeurCmp = R;
 IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /513DD91F;
-Reference = R7;
+Reference = R4;
 ValeurCmp = R;
 IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /51486FB4;
-Reference = R8;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /51486FC0;
-Reference = R9;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128F416;
-Reference = R10;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128F376;
-Reference = SW1;
-ValeurCmp = SW_PUSH;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FA17;
+TimeStamp = /52573E1F;
 Reference = U1;
-ValeurCmp = FT230XS-R;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A22F0;
-Reference = U2;
-ValeurCmp = OPA378;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /51486FBA;
-Reference = U3;
-ValeurCmp = OPA378;
-IdModule  = ;
-EndCmp
-
-BeginCmp
-TimeStamp = /50FF48E1;
-Reference = U4;
-ValeurCmp = PIC16F1933-I/SS;
-IdModule  = ;
+ValeurCmp = MAX9636;
+IdModule  = MAX9636;
 EndCmp
 
 EndListe
