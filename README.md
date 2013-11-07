@@ -7,8 +7,7 @@ comp info
 
 oled
 ----------
-http://www.ebay.com/itm/0-96-Parallel-SPI-IIC-I2C-12864-128-64-Yellow-Blue-OLED-LED-Display-for-Arduino-/370856605767?pt=LH_DefaultDomain_0&hash=item5658c6b847  
-http://www.ebay.com/itm/CRIUS-CO-16-OLED-Display-Module-v1-0-/161066293471?pt=Radio_Control_Parts_Accessories&hash=item25804c98df  
+http://www.aliexpress.com/snapshot/276751791.html  
 http://rusticengineering.com/2010/05/10/oled-0-96-breakout-board-sh1101a-driver/  
 
 micro
