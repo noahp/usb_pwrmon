@@ -1,87 +1,115 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-04 BZR 3984)-stable date = 10/11/2013 4:06:49 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/10/2013 3:03:12 PM
 
 BeginCmp
-TimeStamp = /512A23CC;
+TimeStamp = /527EE765;
 Reference = C1;
-ValeurCmp = C;
+ValeurCmp = 2.2uF/16V;
 IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A24C5;
-Reference = P1;
-ValeurCmp = VLOAD+;
-IdModule  = TEST_0.100;
+TimeStamp = /527EE2F8;
+Reference = C2;
+ValeurCmp = 1uF;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A24C9;
-Reference = P2;
-ValeurCmp = VBUS;
-IdModule  = TEST_0.100;
+TimeStamp = /527EE30C;
+Reference = C3;
+ValeurCmp = 1uF;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A24CC;
-Reference = P3;
-ValeurCmp = ADC_IN;
-IdModule  = TEST_0.100;
+TimeStamp = /527EE3C0;
+Reference = C4;
+ValeurCmp = 1uF;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A24D2;
-Reference = P4;
-ValeurCmp = VLOAD-;
-IdModule  = TEST_0.100;
+TimeStamp = /527EE3D0;
+Reference = C5;
+ValeurCmp = 1uF;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /52585AAF;
-Reference = P5;
-ValeurCmp = SHTDN;
-IdModule  = TEST_0.100;
+TimeStamp = /527EE7C9;
+Reference = C6;
+ValeurCmp = 10uF;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /5128FA79;
-Reference = P8;
-ValeurCmp = GND;
-IdModule  = TEST_0.100;
+TimeStamp = /527FB068;
+Reference = J1;
+ValeurCmp = 16_PIN_HDR;
+IdModule  = 16_pin_double;
 EndCmp
 
 BeginCmp
-TimeStamp = /51FE7DAB;
+TimeStamp = /527E7D7F;
+Reference = J2;
+ValeurCmp = OLED_FPC_CONN;
+IdModule  = oled_fpc_30;
+EndCmp
+
+BeginCmp
+TimeStamp = /527EE5B9;
+Reference = JP1;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527EE637;
+Reference = JP2;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527EE631;
+Reference = JP3;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527FA89F;
+Reference = JP4;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527FA8AF;
+Reference = JP5;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527FA8B5;
+Reference = JP6;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527F9E33;
+Reference = JP7;
+ValeurCmp = JUMPER;
+IdModule  = jmp_small;
+EndCmp
+
+BeginCmp
+TimeStamp = /527EE733;
 Reference = R1;
-ValeurCmp = LVK12-SHUNT;
+ValeurCmp = 390R;
 IdModule  = lvk12;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A232E;
-Reference = R2;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A2310;
-Reference = R3;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /513DD91F;
-Reference = R4;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /52573E1F;
-Reference = U1;
-ValeurCmp = MAX9636;
-IdModule  = MAX9636;
 EndCmp
 
 EndListe
