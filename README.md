@@ -2,6 +2,11 @@ usb_pwrmon
 ==========
 Simple usb port current/voltage measurement with display.
 
+oled breakout
+==========
+![front pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/front.png)
+![back pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/back.png)
+
 comp info
 ==========
 
