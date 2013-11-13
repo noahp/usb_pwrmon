@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/10/2013 3:03:12 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/13/2013 3:01:01 PM
 
 BeginCmp
 TimeStamp = /527EE765;
@@ -57,42 +57,42 @@ IdModule  = oled_fpc_30;
 EndCmp
 
 BeginCmp
-TimeStamp = /527EE5B9;
+TimeStamp = /527FA89F;
 Reference = JP1;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
 EndCmp
 
 BeginCmp
-TimeStamp = /527EE637;
+TimeStamp = /527EE5B9;
 Reference = JP2;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
 EndCmp
 
 BeginCmp
-TimeStamp = /527EE631;
+TimeStamp = /527EE637;
 Reference = JP3;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
 EndCmp
 
 BeginCmp
-TimeStamp = /527FA89F;
+TimeStamp = /527FA8AF;
 Reference = JP4;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
 EndCmp
 
 BeginCmp
-TimeStamp = /527FA8AF;
+TimeStamp = /527FA8B5;
 Reference = JP5;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
 EndCmp
 
 BeginCmp
-TimeStamp = /527FA8B5;
+TimeStamp = /527EE631;
 Reference = JP6;
 ValeurCmp = JUMPER;
 IdModule  = jmp_small;
