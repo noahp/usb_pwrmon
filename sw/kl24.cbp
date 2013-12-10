@@ -30,6 +30,10 @@
 		<Unit filename="Makefile" />
 		<Unit filename="link.ld" />
 		<Unit filename="src/MKL25Z4.h" />
+		<Unit filename="src/delay.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/delay.h" />
 		<Unit filename="src/font_5x8.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -39,6 +43,13 @@
 		</Unit>
 		<Unit filename="src/interrupts.h" />
 		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/oled.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/oled.h" />
+		<Unit filename="src/ssd1306.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ssd1306.h" />
