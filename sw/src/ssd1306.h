@@ -9,11 +9,8 @@
 
 #include <stdint.h>
 
-#define SSD1306_SIZEOF_SCREENBUF (128*64/8)
-
-void ssd1306_command(uint8_t c);
-void ssd1306_data(uint8_t c);
 void ssd1306_init(void);
-void ssd1306_writeBuffer(uint8_t *buffer);
+void ssd1306_writeBuffer(void);
+void ssd1306_writeString(char *str, uint32_t pos);
 
 #endif // SSD1306_H

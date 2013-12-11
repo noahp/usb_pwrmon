@@ -5,9 +5,14 @@
 //
 
 #include "ssd1306.h"
+#include "font_5x8.h"
 #include <stdint.h>
 #include "MKL25Z4.h"
 #include "delay.h"
+
+// screen buffer
+#define SSD1306_SIZEOF_SCREENBUF (128*64/8)
+static uint8_t ssd1306_screenBuf[SSD1306_SIZEOF_SCREENBUF] = {0x00};
 
 // some pin abstractions
 #define SET_RST()   (GPIOC_PSOR = (1 << 7))
@@ -189,7 +194,7 @@ void ssd1306_init(void)
     ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
 }
 
-void ssd1306_writeBuffer(uint8_t *buffer)
+void ssd1306_writeBuffer(void)
 {
     uint32_t i;
 
@@ -198,6 +203,31 @@ void ssd1306_writeBuffer(uint8_t *buffer)
     ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
 
     for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
-        ssd1306_data(buffer[i]);
+        ssd1306_data(ssd1306_screenBuf[i]);
+    }
+}
+
+// write a string to the screen. pos is character coords,
+// with 0,0=0 top left, ex: 1,4=(1*19)+4=23.
+// automatically wraps text at column end.
+void ssd1306_writeString(char *str, uint32_t pos)
+{
+    uint32_t i = 0, j;
+
+    // for each chr in the string, print it to the display
+    while(*str != '\0'){
+        if(((*str-0x20) < 96) && (*str >= 0x20)){
+            for(j=0; j<5; j++){
+                ssd1306_screenBuf[i*6+j] = font5x8[(*str-0x20)*5+j];
+            }
+        }
+        else{
+            for(j=0; j<5; j++){
+                ssd1306_screenBuf[i*6+j] = 0;
+            }
+        }
+        ssd1306_screenBuf[i*6+5] = 0;
+        str++;
+        i++;
     }
 }

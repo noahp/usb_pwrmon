@@ -45,9 +45,7 @@ Discarded input sections
  .bss           0x00000000        0x0 obj\Debug\src\font_5x8.o
  .data          0x00000000        0x0 obj\Debug\src\interrupts.o
  .bss           0x00000000        0x0 obj\Debug\src\interrupts.o
- .data          0x00000000        0x0 obj\Debug\src\oled.o
  .data          0x00000000        0x0 obj\Debug\src\ssd1306.o
- .bss           0x00000000        0x0 obj\Debug\src\ssd1306.o
  .data          0x00000000        0x0 obj\Debug\src\startup.o
  .bss           0x00000000        0x0 obj\Debug\src\startup.o
  .data          0x00000000        0x0 obj\Debug\src\systick.o
@@ -135,7 +133,6 @@ LOAD obj\Debug\src\delay.o
 LOAD obj\Debug\src\font_5x8.o
 LOAD obj\Debug\src\interrupts.o
 LOAD obj\Debug\src\main.o
-LOAD obj\Debug\src\oled.o
 LOAD obj\Debug\src\ssd1306.o
 LOAD obj\Debug\src\startup.o
 LOAD obj\Debug\src\systick.o
@@ -150,7 +147,7 @@ LOAD obj\Debug\src\systick.o
  .flashconfig   0x00000400       0x10 obj\Debug\src\startup.o
                 0x00000400                flashConfig
 
-.text           0x00000410      0x7e0
+.text           0x00000410      0x7cc
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000410       0x28 obj\Debug\src\delay.o
                 0x00000410                delay_ms
@@ -163,38 +160,36 @@ LOAD obj\Debug\src\systick.o
                 0x0000054c                main_led
                 0x0000057c                main_oled
                 0x000005ac                main
- .text          0x000005d0       0xd4 obj\Debug\src\oled.o
-                0x000005d0                oled_writeString
-                0x00000690                oled_refresh
- .text          0x000006a4      0x2c0 obj\Debug\src\ssd1306.o
-                0x000006a4                ssd1306_command
-                0x000006dc                ssd1306_data
-                0x00000714                ssd1306_init
-                0x0000091c                ssd1306_writeBuffer
- .text          0x00000964       0x64 obj\Debug\src\startup.o
-                0x00000964                StartupInitClock
- .text          0x000009c8       0x2c obj\Debug\src\systick.o
-                0x000009c8                systick_update
-                0x000009e0                systick_getMs
+ .text          0x000005d0      0x380 obj\Debug\src\ssd1306.o
+                0x000005d0                ssd1306_command
+                0x00000608                ssd1306_data
+                0x00000640                ssd1306_init
+                0x00000848                ssd1306_writeBuffer
+                0x00000890                ssd1306_writeString
+ .text          0x00000950       0x64 obj\Debug\src\startup.o
+                0x00000950                StartupInitClock
+ .text          0x000009b4       0x2c obj\Debug\src\systick.o
+                0x000009b4                systick_update
+                0x000009cc                systick_getMs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x000009f4      0x1e0 obj\Debug\src\font_5x8.o
-                0x000009f4                font5x8
- .rodata        0x00000bd4       0x1c obj\Debug\src\main.o
+ .rodata        0x000009e0      0x1e0 obj\Debug\src\font_5x8.o
+                0x000009e0                font5x8
+ .rodata        0x00000bc0       0x1c obj\Debug\src\main.o
 
-.vfp11_veneer   0x00000bf0        0x0
+.vfp11_veneer   0x00000bdc        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000bf0        0x0
+.v4_bx          0x00000bdc        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000bf0        0x0
+.iplt           0x00000bdc        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
-.rel.dyn        0x00000bf0        0x0
+.rel.dyn        0x00000bdc        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
 .ARM.extab
@@ -202,33 +197,32 @@ LOAD obj\Debug\src\systick.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000bf0                . = ALIGN (0x4)
-                0x00000bf0                _etext = .
-                0x00000bf0                _sidata = .
+                0x00000bdc                . = ALIGN (0x4)
+                0x00000bdc                _etext = .
+                0x00000bdc                _sidata = .
 
-.data           0x1ffff000        0x4 load address 0x00000bf0
+.data           0x1ffff000        0x4 load address 0x00000bdc
                 0x1ffff000                _sdata = .
  *(.data .data.*)
  .data          0x1ffff000        0x4 obj\Debug\src\main.o
                 0x1ffff004                . = ALIGN (0x4)
                 0x1ffff004                _edata = .
 
-.igot.plt       0x1ffff004        0x0 load address 0x00000bf4
+.igot.plt       0x1ffff004        0x0 load address 0x00000be0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
-.bss            0x1ffff004      0x408 load address 0x00000bf4
+.bss            0x1ffff004      0x408 load address 0x00000be0
                 0x1ffff004                _sbss = .
  *(.bss .bss.*)
  .bss           0x1ffff004        0x4 obj\Debug\src\main.o
- .bss           0x1ffff008      0x400 obj\Debug\src\oled.o
-                0x1ffff008                oled_screenBuf
+ .bss           0x1ffff008      0x400 obj\Debug\src\ssd1306.o
  .bss           0x1ffff408        0x4 obj\Debug\src\systick.o
                 0x1ffff408                systick_ms
  *(COMMON)
                 0x1ffff40c                . = ALIGN (0x4)
                 0x1ffff40c                _ebss = .
 
-.co_stack       0x1ffff40c      0x404 load address 0x00000ffc
+.co_stack       0x1ffff40c      0x404 load address 0x00000fe8
                 0x1ffff410                . = ALIGN (0x8)
  *fill*         0x1ffff40c        0x4 00
  *(.co_stack .co_stack.*)
@@ -244,36 +238,33 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm
 LOAD c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtn.o
 OUTPUT(bin\Debug\kl24.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x12d3
+.debug_info     0x00000000     0x1213
  .debug_info    0x00000000       0xa5 obj\Debug\src\delay.o
  .debug_info    0x000000a5       0x50 obj\Debug\src\font_5x8.o
  .debug_info    0x000000f5      0x19f obj\Debug\src\interrupts.o
- .debug_info    0x00000294      0x454 obj\Debug\src\main.o
- .debug_info    0x000006e8      0x142 obj\Debug\src\oled.o
- .debug_info    0x0000082a      0x510 obj\Debug\src\ssd1306.o
- .debug_info    0x00000d3a      0x4e4 obj\Debug\src\startup.o
- .debug_info    0x0000121e       0xb5 obj\Debug\src\systick.o
+ .debug_info    0x00000294      0x444 obj\Debug\src\main.o
+ .debug_info    0x000006d8      0x5a2 obj\Debug\src\ssd1306.o
+ .debug_info    0x00000c7a      0x4e4 obj\Debug\src\startup.o
+ .debug_info    0x0000115e       0xb5 obj\Debug\src\systick.o
 
-.debug_abbrev   0x00000000      0x5ec
+.debug_abbrev   0x00000000      0x536
  .debug_abbrev  0x00000000       0x6b obj\Debug\src\delay.o
  .debug_abbrev  0x0000006b       0x43 obj\Debug\src\font_5x8.o
  .debug_abbrev  0x000000ae      0x10a obj\Debug\src\interrupts.o
- .debug_abbrev  0x000001b8      0x11a obj\Debug\src\main.o
- .debug_abbrev  0x000002d2       0xb8 obj\Debug\src\oled.o
- .debug_abbrev  0x0000038a      0x10a obj\Debug\src\ssd1306.o
- .debug_abbrev  0x00000494       0xe0 obj\Debug\src\startup.o
- .debug_abbrev  0x00000574       0x78 obj\Debug\src\systick.o
+ .debug_abbrev  0x000001b8      0x104 obj\Debug\src\main.o
+ .debug_abbrev  0x000002bc      0x122 obj\Debug\src\ssd1306.o
+ .debug_abbrev  0x000003de       0xe0 obj\Debug\src\startup.o
+ .debug_abbrev  0x000004be       0x78 obj\Debug\src\systick.o
 
-.debug_loc      0x00000000      0x378
+.debug_loc      0x00000000      0x34c
  .debug_loc     0x00000000       0x38 obj\Debug\src\delay.o
  .debug_loc     0x00000038       0xc8 obj\Debug\src\interrupts.o
  .debug_loc     0x00000100       0xb0 obj\Debug\src\main.o
- .debug_loc     0x000001b0       0x64 obj\Debug\src\oled.o
- .debug_loc     0x00000214       0xe0 obj\Debug\src\ssd1306.o
- .debug_loc     0x000002f4       0x2c obj\Debug\src\startup.o
- .debug_loc     0x00000320       0x58 obj\Debug\src\systick.o
+ .debug_loc     0x000001b0      0x118 obj\Debug\src\ssd1306.o
+ .debug_loc     0x000002c8       0x2c obj\Debug\src\startup.o
+ .debug_loc     0x000002f4       0x58 obj\Debug\src\systick.o
 
-.debug_aranges  0x00000000       0xf8
+.debug_aranges  0x00000000       0xd8
  .debug_aranges
                 0x00000000       0x20 obj\Debug\src\delay.o
  .debug_aranges
@@ -283,40 +274,35 @@ OUTPUT(bin\Debug\kl24.elf elf32-littlearm)
  .debug_aranges
                 0x00000058       0x20 obj\Debug\src\main.o
  .debug_aranges
-                0x00000078       0x20 obj\Debug\src\oled.o
+                0x00000078       0x20 obj\Debug\src\ssd1306.o
  .debug_aranges
-                0x00000098       0x20 obj\Debug\src\ssd1306.o
+                0x00000098       0x20 obj\Debug\src\startup.o
  .debug_aranges
-                0x000000b8       0x20 obj\Debug\src\startup.o
- .debug_aranges
-                0x000000d8       0x20 obj\Debug\src\systick.o
+                0x000000b8       0x20 obj\Debug\src\systick.o
 
-.debug_line     0x00000000      0x79e
+.debug_line     0x00000000      0x6c3
  .debug_line    0x00000000       0xe4 obj\Debug\src\delay.o
  .debug_line    0x000000e4       0x44 obj\Debug\src\font_5x8.o
  .debug_line    0x00000128      0x10f obj\Debug\src\interrupts.o
  .debug_line    0x00000237      0x107 obj\Debug\src\main.o
- .debug_line    0x0000033e      0x127 obj\Debug\src\oled.o
- .debug_line    0x00000465      0x167 obj\Debug\src\ssd1306.o
- .debug_line    0x000005cc       0xf1 obj\Debug\src\startup.o
- .debug_line    0x000006bd       0xe1 obj\Debug\src\systick.o
+ .debug_line    0x0000033e      0x1b3 obj\Debug\src\ssd1306.o
+ .debug_line    0x000004f1       0xf1 obj\Debug\src\startup.o
+ .debug_line    0x000005e2       0xe1 obj\Debug\src\systick.o
 
-.debug_str      0x00000000      0x503
+.debug_str      0x00000000      0x4d5
  .debug_str     0x00000000       0xd5 obj\Debug\src\delay.o
                                 0x109 (size before relaxing)
  .debug_str     0x000000d5       0x35 obj\Debug\src\font_5x8.o
                                  0x83 (size before relaxing)
  .debug_str     0x0000010a       0xba obj\Debug\src\interrupts.o
                                 0x190 (size before relaxing)
- .debug_str     0x000001c4      0x1bc obj\Debug\src\main.o
-                                0x29b (size before relaxing)
- .debug_str     0x00000380       0x3c obj\Debug\src\oled.o
-                                0x141 (size before relaxing)
- .debug_str     0x000003bc       0x81 obj\Debug\src\ssd1306.o
-                                0x2b3 (size before relaxing)
- .debug_str     0x0000043d       0x7b obj\Debug\src\startup.o
+ .debug_str     0x000001c4      0x1ab obj\Debug\src\main.o
+                                0x28a (size before relaxing)
+ .debug_str     0x0000036f       0xa0 obj\Debug\src\ssd1306.o
+                                0x2df (size before relaxing)
+ .debug_str     0x0000040f       0x7b obj\Debug\src\startup.o
                                 0x274 (size before relaxing)
- .debug_str     0x000004b8       0x4b obj\Debug\src\systick.o
+ .debug_str     0x0000048a       0x4b obj\Debug\src\systick.o
                                 0x121 (size before relaxing)
 
 .comment        0x00000000       0x70
@@ -325,7 +311,6 @@ OUTPUT(bin\Debug\kl24.elf elf32-littlearm)
  .comment       0x00000000       0x71 obj\Debug\src\font_5x8.o
  .comment       0x00000000       0x71 obj\Debug\src\interrupts.o
  .comment       0x00000000       0x71 obj\Debug\src\main.o
- .comment       0x00000000       0x71 obj\Debug\src\oled.o
  .comment       0x00000000       0x71 obj\Debug\src\ssd1306.o
  .comment       0x00000000       0x71 obj\Debug\src\startup.o
  .comment       0x00000000       0x71 obj\Debug\src\systick.o
@@ -341,19 +326,16 @@ OUTPUT(bin\Debug\kl24.elf elf32-littlearm)
  .ARM.attributes
                 0x00000096       0x32 obj\Debug\src\main.o
  .ARM.attributes
-                0x000000c8       0x32 obj\Debug\src\oled.o
+                0x000000c8       0x32 obj\Debug\src\ssd1306.o
  .ARM.attributes
-                0x000000fa       0x32 obj\Debug\src\ssd1306.o
+                0x000000fa       0x32 obj\Debug\src\startup.o
  .ARM.attributes
-                0x0000012c       0x32 obj\Debug\src\startup.o
- .ARM.attributes
-                0x0000015e       0x32 obj\Debug\src\systick.o
+                0x0000012c       0x32 obj\Debug\src\systick.o
 
-.debug_frame    0x00000000      0x288
+.debug_frame    0x00000000      0x25c
  .debug_frame   0x00000000       0x30 obj\Debug\src\delay.o
  .debug_frame   0x00000030       0x88 obj\Debug\src\interrupts.o
  .debug_frame   0x000000b8       0x80 obj\Debug\src\main.o
- .debug_frame   0x00000138       0x4c obj\Debug\src\oled.o
- .debug_frame   0x00000184       0x90 obj\Debug\src\ssd1306.o
- .debug_frame   0x00000214       0x2c obj\Debug\src\startup.o
- .debug_frame   0x00000240       0x48 obj\Debug\src\systick.o
+ .debug_frame   0x00000138       0xb0 obj\Debug\src\ssd1306.o
+ .debug_frame   0x000001e8       0x2c obj\Debug\src\startup.o
+ .debug_frame   0x00000214       0x48 obj\Debug\src\systick.o
