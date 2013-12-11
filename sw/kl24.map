@@ -147,7 +147,7 @@ LOAD obj\Debug\src\systick.o
  .flashconfig   0x00000400       0x10 obj\Debug\src\startup.o
                 0x00000400                flashConfig
 
-.text           0x00000410      0x7cc
+.text           0x00000410      0x974
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000410       0x28 obj\Debug\src\delay.o
                 0x00000410                delay_ms
@@ -160,36 +160,36 @@ LOAD obj\Debug\src\systick.o
                 0x0000054c                main_led
                 0x0000057c                main_oled
                 0x000005ac                main
- .text          0x000005d0      0x380 obj\Debug\src\ssd1306.o
+ .text          0x000005d0      0x384 obj\Debug\src\ssd1306.o
                 0x000005d0                ssd1306_command
                 0x00000608                ssd1306_data
                 0x00000640                ssd1306_init
                 0x00000848                ssd1306_writeBuffer
                 0x00000890                ssd1306_writeString
- .text          0x00000950       0x64 obj\Debug\src\startup.o
-                0x00000950                StartupInitClock
- .text          0x000009b4       0x2c obj\Debug\src\systick.o
-                0x000009b4                systick_update
-                0x000009cc                systick_getMs
+ .text          0x00000954       0x64 obj\Debug\src\startup.o
+                0x00000954                StartupInitClock
+ .text          0x000009b8       0x2c obj\Debug\src\systick.o
+                0x000009b8                systick_update
+                0x000009d0                systick_getMs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x000009e0      0x1e0 obj\Debug\src\font_5x8.o
-                0x000009e0                font5x8
- .rodata        0x00000bc0       0x1c obj\Debug\src\main.o
+ .rodata        0x000009e4      0x1e0 obj\Debug\src\font_5x8.o
+                0x000009e4                font5x8
+ .rodata        0x00000bc4      0x1c0 obj\Debug\src\main.o
 
-.vfp11_veneer   0x00000bdc        0x0
+.vfp11_veneer   0x00000d84        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000bdc        0x0
+.v4_bx          0x00000d84        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000bdc        0x0
+.iplt           0x00000d84        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
-.rel.dyn        0x00000bdc        0x0
+.rel.dyn        0x00000d84        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
 .ARM.extab
@@ -197,21 +197,21 @@ LOAD obj\Debug\src\systick.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000bdc                . = ALIGN (0x4)
-                0x00000bdc                _etext = .
-                0x00000bdc                _sidata = .
+                0x00000d84                . = ALIGN (0x4)
+                0x00000d84                _etext = .
+                0x00000d84                _sidata = .
 
-.data           0x1ffff000        0x4 load address 0x00000bdc
+.data           0x1ffff000        0x4 load address 0x00000d84
                 0x1ffff000                _sdata = .
  *(.data .data.*)
  .data          0x1ffff000        0x4 obj\Debug\src\main.o
                 0x1ffff004                . = ALIGN (0x4)
                 0x1ffff004                _edata = .
 
-.igot.plt       0x1ffff004        0x0 load address 0x00000be0
+.igot.plt       0x1ffff004        0x0 load address 0x00000d88
  .igot.plt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/crtbegin.o
 
-.bss            0x1ffff004      0x408 load address 0x00000be0
+.bss            0x1ffff004      0x408 load address 0x00000d88
                 0x1ffff004                _sbss = .
  *(.bss .bss.*)
  .bss           0x1ffff004        0x4 obj\Debug\src\main.o
@@ -222,7 +222,7 @@ LOAD obj\Debug\src\systick.o
                 0x1ffff40c                . = ALIGN (0x4)
                 0x1ffff40c                _ebss = .
 
-.co_stack       0x1ffff40c      0x404 load address 0x00000fe8
+.co_stack       0x1ffff40c      0x404 load address 0x00001190
                 0x1ffff410                . = ALIGN (0x8)
  *fill*         0x1ffff40c        0x4 00
  *(.co_stack .co_stack.*)
@@ -280,14 +280,14 @@ OUTPUT(bin\Debug\kl24.elf elf32-littlearm)
  .debug_aranges
                 0x000000b8       0x20 obj\Debug\src\systick.o
 
-.debug_line     0x00000000      0x6c3
+.debug_line     0x00000000      0x6ca
  .debug_line    0x00000000       0xe4 obj\Debug\src\delay.o
  .debug_line    0x000000e4       0x44 obj\Debug\src\font_5x8.o
  .debug_line    0x00000128      0x10f obj\Debug\src\interrupts.o
  .debug_line    0x00000237      0x107 obj\Debug\src\main.o
- .debug_line    0x0000033e      0x1b3 obj\Debug\src\ssd1306.o
- .debug_line    0x000004f1       0xf1 obj\Debug\src\startup.o
- .debug_line    0x000005e2       0xe1 obj\Debug\src\systick.o
+ .debug_line    0x0000033e      0x1ba obj\Debug\src\ssd1306.o
+ .debug_line    0x000004f8       0xf1 obj\Debug\src\startup.o
+ .debug_line    0x000005e9       0xe1 obj\Debug\src\systick.o
 
 .debug_str      0x00000000      0x4d5
  .debug_str     0x00000000       0xd5 obj\Debug\src\delay.o
