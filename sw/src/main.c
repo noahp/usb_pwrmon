@@ -38,7 +38,7 @@ void main_led(void)
 
 void main_oled(void)
 {
-    static uint32_t oledTime = 0;
+    static uint32_t oledTime = 1001;
 
     // service every 150ms
     if(systick_getMs() - oledTime > 1000){
@@ -52,6 +52,8 @@ int main(void) {
     // initialize the necessary
     main_init_io();
     ssd1306_init();
+
+    oled_writeString("Morgan is one awesomelady!");
 
     while(1){
         // led task
