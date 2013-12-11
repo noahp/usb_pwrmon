@@ -44,7 +44,7 @@ void main_oled(void)
     if(systick_getMs() - oledTime > 1000){
         oledTime = systick_getMs();
         // refresh the oled display
-        oled_refresh();
+        ssd1306_writeBuffer();
     }
 }
 
@@ -53,7 +53,7 @@ int main(void) {
     main_init_io();
     ssd1306_init();
 
-    oled_writeString("Morgan is one awesomelady!");
+    ssd1306_writeString("Morgan is one awesomelady!", 0);
 
     while(1){
         // led task
