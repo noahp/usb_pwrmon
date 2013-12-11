@@ -215,7 +215,7 @@ void ssd1306_writeString(char *str, uint32_t pos)
     uint32_t i = 0, j;
 
     // for each chr in the string, print it to the display
-    while(*str != '\0'){
+    while((*str != '\0') && (i < (128/6)*(96/8))){
         if(((*str-0x20) < 96) && (*str >= 0x20)){
             for(j=0; j<5; j++){
                 ssd1306_screenBuf[i*6+j] = font5x8[(*str-0x20)*5+j];
