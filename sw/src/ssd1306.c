@@ -9,7 +9,6 @@
 #include "MKL25Z4.h"
 #include "delay.h"
 
-
 // some pin abstractions
 #define SET_RST()   (GPIOC_PSOR = (1 << 7))
 #define CLR_RST()   (GPIOC_PCOR = (1 << 7))
@@ -78,6 +77,8 @@ void ssd1306_data(uint8_t c)
 
 void ssd1306_init(void)
 {
+    uint32_t i;
+
     // init necessary io
     /*
         presently:
@@ -175,6 +176,15 @@ void ssd1306_init(void)
     ssd1306_command(0x40);
     ssd1306_command(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
     ssd1306_command(SSD1306_NORMALDISPLAY);                 // 0xA6
+
+    // set display blank
+    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
+    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
+    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
+
+    for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
+        ssd1306_data(0);
+    }
 
     ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
 }
