@@ -10,9 +10,7 @@
 #include "MKL25Z4.h"
 #include "delay.h"
 
-// screen buffer
 #define SSD1306_SIZEOF_SCREENBUF (128*64/8)
-static uint8_t ssd1306_screenBuf[SSD1306_SIZEOF_SCREENBUF] = {0x00};
 
 // some pin abstractions
 #define SET_RST()   (GPIOC_PSOR = (1 << 7))
@@ -182,6 +180,8 @@ void ssd1306_init(void)
     ssd1306_command(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
     ssd1306_command(SSD1306_NORMALDISPLAY);                 // 0xA6
 
+    ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
+
     // set display blank
     ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
     ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
@@ -189,21 +189,6 @@ void ssd1306_init(void)
 
     for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
         ssd1306_data(0);
-    }
-
-    ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
-}
-
-void ssd1306_writeBuffer(void)
-{
-    uint32_t i;
-
-    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
-    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
-    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
-
-    for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
-        ssd1306_data(ssd1306_screenBuf[i]);
     }
 }
 
@@ -214,20 +199,28 @@ void ssd1306_writeString(char *str, uint32_t pos)
 {
     uint32_t i = 0, j;
 
+    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
+    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
+    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
+
     // for each chr in the string, print it to the display
-    while((*str != '\0') && (i < (128/6)*(96/8))){
+    while((*str != '\0') && ((i+1)*6*8 < 128*64)){
         if(((*str-0x20) < 96) && (*str >= 0x20)){
             for(j=0; j<5; j++){
-                ssd1306_screenBuf[i*6+j] = font5x8[(*str-0x20)*5+j];
+                ssd1306_data(font5x8[(*str-0x20)*5+j]);
             }
         }
         else{
             for(j=0; j<5; j++){
-                ssd1306_screenBuf[i*6+j] = 0;
+                ssd1306_data(0);
             }
         }
-        ssd1306_screenBuf[i*6+5] = 0;
+        ssd1306_data(0);
         str++;
         i++;
+    }
+    i = (128*64-i*6*8)/8;
+    while(i--){
+        ssd1306_data(0);
     }
 }
