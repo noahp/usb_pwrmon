@@ -42,8 +42,6 @@ void main_oled(void)
     // service every 150ms
     if(systick_getMs() - oledTime > 1000){
         oledTime = systick_getMs();
-        // refresh the oled display
-        ssd1306_writeBuffer();
     }
 }
 
@@ -53,6 +51,8 @@ int main(void) {
     ssd1306_init();
 
     ssd1306_writeString("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 0);
+//    ssd1306_writeString("some other string", 0);
+//    ssd1306_writeString("hello world", 0);
 
     while(1){
         // led task
