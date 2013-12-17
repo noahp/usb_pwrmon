@@ -38,10 +38,20 @@ void main_led(void)
 void main_oled(void)
 {
     static uint32_t oledTime = 1001;
+    static int stringListIdx = 0;
+    char *stringList[] = {
+        "Hello world!",
+        "Another string.",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    };
 
-    // service every 150ms
+    // blink every 250ms
     if(systick_getMs() - oledTime > 1000){
         oledTime = systick_getMs();
+        ssd1306_writeString(stringList[stringListIdx], 0);
+        if(++stringListIdx >= 3){
+            stringListIdx = 0;
+        }
     }
 }
 
@@ -50,15 +60,11 @@ int main(void) {
     main_init_io();
     ssd1306_init();
 
-    ssd1306_writeString("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 0);
-//    ssd1306_writeString("some other string", 0);
-//    ssd1306_writeString("hello world", 0);
-
     while(1){
         // led task
         main_led();
 
-        // oled
+        // oled task
         main_oled();
     }
 
