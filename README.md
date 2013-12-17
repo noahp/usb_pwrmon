@@ -1,14 +1,19 @@
 usb_pwrmon
 ==========
-Simple usb port current/voltage/power measurement with display.
+Simple usb port current/voltage measurement with display.
+
+oled breakout
+==========
+![front pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/front.png)
+![back pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/back.png)
 
 comp info
 ==========
 
 oled
 ----------
-http://www.aliexpress.com/snapshot/276751791.html  
-http://rusticengineering.com/2010/05/10/oled-0-96-breakout-board-sh1101a-driver/  
+http://www.aliexpress.com/snapshot/276751791.html
+http://rusticengineering.com/2010/05/10/oled-0-96-breakout-board-sh1101a-driver/
 
 micro
 ----------
@@ -20,8 +25,8 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 ----------
-current sense, fixed at 80 gain:  
-http://www.mouser.com/ProductDetail/Analog-Devices/AD8293G80ARJZ-R7/?qs=sGAEpiMZZMvEn2pkGav3bNYdL9E%2foSzJYdqf7Uk6kdc%3d  
+current sense, fixed at 80 gain:
+http://www.mouser.com/ProductDetail/Analog-Devices/AD8293G80ARJZ-R7/?qs=sGAEpiMZZMvEn2pkGav3bNYdL9E%2foSzJYdqf7Uk6kdc%3d
 that's a range of 0-4.125A with a shunt resistor of 0.010 Ohms. assuming 16-bit adc (on freescale kl25), ~15 bits per mA.
 
 button:
