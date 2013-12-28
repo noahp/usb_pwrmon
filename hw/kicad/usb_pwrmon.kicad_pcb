@@ -3,7 +3,7 @@
   (general
     (links 104)
     (no_connects 104)
-    (area 0 0 0 0)
+    (area 19.959667 8.006 56.728333 69.023)
     (thickness 1.6)
     (drawings 0)
     (tracks 0)
@@ -59,7 +59,7 @@
     (pad_drill 0)
     (pad_to_mask_clearance 0.2)
     (aux_axis_origin 0 0)
-    (visible_elements 7FFFFFBF)
+    (visible_elements 7FFFF7BF)
     (pcbplotparams
       (layerselection 284196865)
       (usegerberextensions true)
@@ -208,7 +208,7 @@
   )
 
   (module sot23-8 (layer F.Cu) (tedit 52AFB9FD) (tstamp 52AFBA6F)
-    (at 36.576 36.322)
+    (at 92 33.5)
     (path /52AFAB94)
     (fp_text reference U1 (at 1.651 -1.397) (layer F.SilkS) hide
       (effects (font (size 0.75 0.75) (thickness 0.15)))
@@ -236,7 +236,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBA79)
-    (at 43.942 48.006)
+    (at 116.442 56.006)
     (path /52AFAE3C)
     (attr smd)
     (fp_text reference R3 (at 0 0) (layer F.SilkS)
@@ -261,7 +261,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBA83)
-    (at 47.244 48.006)
+    (at 119.744 56.006)
     (path /52B0021F)
     (attr smd)
     (fp_text reference C10 (at 0 0) (layer F.SilkS)
@@ -286,7 +286,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBA8D)
-    (at 21.59 56.388)
+    (at 101.09 47.388)
     (path /52AFF3F2)
     (attr smd)
     (fp_text reference C7 (at 0 0) (layer F.SilkS)
@@ -311,7 +311,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBA97)
-    (at 24.892 56.388)
+    (at 104.392 47.388)
     (path /52AFF3C5)
     (attr smd)
     (fp_text reference R9 (at 0 0) (layer F.SilkS)
@@ -336,7 +336,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAA1)
-    (at 28.194 56.388)
+    (at 107.694 47.388)
     (path /52AFF3AE)
     (attr smd)
     (fp_text reference D1 (at 0 0) (layer F.SilkS)
@@ -361,7 +361,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAAB)
-    (at 37.592 56.388)
+    (at 117.092 47.388)
     (path /52AFE720)
     (attr smd)
     (fp_text reference R8 (at 0 0) (layer F.SilkS)
@@ -386,7 +386,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAB5)
-    (at 44.704 58.674)
+    (at 124.204 49.674)
     (path /52AFE705)
     (attr smd)
     (fp_text reference R7 (at 0 0) (layer F.SilkS)
@@ -411,7 +411,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBABF)
-    (at 41.656 58.674)
+    (at 121.156 49.674)
     (path /52AFD024)
     (attr smd)
     (fp_text reference R5 (at 0 0) (layer F.SilkS)
@@ -436,7 +436,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAC9)
-    (at 38.354 58.674)
+    (at 117.854 49.674)
     (path /52AFD017)
     (attr smd)
     (fp_text reference R4 (at 0 0) (layer F.SilkS)
@@ -461,7 +461,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAD3)
-    (at 35.052 58.674)
+    (at 114.552 49.674)
     (path /52AFC29E)
     (attr smd)
     (fp_text reference C11 (at 0 0) (layer F.SilkS)
@@ -486,7 +486,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBADD)
-    (at 31.75 58.674)
+    (at 111.25 49.674)
     (path /52AFB50D)
     (attr smd)
     (fp_text reference C8 (at 0 0) (layer F.SilkS)
@@ -511,7 +511,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAE7)
-    (at 28.194 58.674)
+    (at 107.694 49.674)
     (path /52AFB287)
     (attr smd)
     (fp_text reference C9 (at 0 0) (layer F.SilkS)
@@ -536,7 +536,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAF1)
-    (at 24.638 58.674)
+    (at 104.138 49.674)
     (path /52AFAE27)
     (attr smd)
     (fp_text reference R2 (at 0 0) (layer F.SilkS)
@@ -561,7 +561,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBAFB)
-    (at 21.59 58.674)
+    (at 101.09 49.674)
     (path /527EE7C9)
     (attr smd)
     (fp_text reference C6 (at 0 0) (layer F.SilkS)
@@ -586,7 +586,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB05)
-    (at 48.26 56.388)
+    (at 127.76 47.388)
     (path /527EE765)
     (attr smd)
     (fp_text reference C1 (at 0 0) (layer F.SilkS)
@@ -611,7 +611,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB0F)
-    (at 43.942 56.388)
+    (at 123.442 47.388)
     (path /527EE733)
     (attr smd)
     (fp_text reference R1 (at 0 0) (layer F.SilkS)
@@ -636,7 +636,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB19)
-    (at 40.894 56.388)
+    (at 120.394 47.388)
     (path /527EE3D0)
     (attr smd)
     (fp_text reference C5 (at 0 0) (layer F.SilkS)
@@ -661,7 +661,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB23)
-    (at 40.894 48.006)
+    (at 113.394 56.006)
     (path /527EE3C0)
     (attr smd)
     (fp_text reference C4 (at 0 0) (layer F.SilkS)
@@ -686,7 +686,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB2D)
-    (at 34.544 56.388)
+    (at 114.044 47.388)
     (path /527EE30C)
     (attr smd)
     (fp_text reference C3 (at 0 0) (layer F.SilkS)
@@ -711,7 +711,7 @@
   )
 
   (module SM0603 (layer F.Cu) (tedit 4E43A3D1) (tstamp 52AFBB37)
-    (at 31.242 56.388)
+    (at 110.742 47.388)
     (path /527EE2F8)
     (attr smd)
     (fp_text reference C2 (at 0 0) (layer F.SilkS)
@@ -736,7 +736,7 @@
   )
 
   (module oled_fpc_30 (layer F.Cu) (tedit 527FE5BB) (tstamp 52AFBB59)
-    (at 25.908 29.21)
+    (at 92 27)
     (path /527E7D7F)
     (fp_text reference J_2 (at 0 3) (layer F.SilkS)
       (effects (font (size 0.75 0.75) (thickness 0.13)))
@@ -807,7 +807,7 @@
   )
 
   (module MKL24Z64VFM4 (layer F.Cu) (tedit 5169BBA6) (tstamp 52AFBB7E)
-    (at 27.178 41.148)
+    (at 101.5 37)
     (path /52AFA797)
     (fp_text reference U2 (at 0 -6) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -883,7 +883,7 @@
   )
 
   (module lvk12 (layer F.Cu) (tedit 51FE8116) (tstamp 52AFBB86)
-    (at 29.464 52.324)
+    (at 86.5 35.5)
     (path /52AFA898)
     (fp_text reference R6 (at 0 2.159) (layer F.SilkS)
       (effects (font (size 0.8 0.8) (thickness 0.1)))
@@ -902,7 +902,7 @@
   )
 
   (module jmp_small (layer F.Cu) (tedit 519F6179) (tstamp 52AFBB9E)
-    (at 50.038 60.452)
+    (at 129.538 51.452)
     (path /52AFCD33)
     (fp_text reference JP1 (at 0 -2.032) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -917,7 +917,7 @@
   )
 
   (module jmp_small (layer F.Cu) (tedit 519F6179) (tstamp 52AFBBA4)
-    (at 23.622 66.294)
+    (at 103.122 57.294)
     (path /52AFCD4C)
     (fp_text reference JP2 (at 0 -2.032) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -932,7 +932,7 @@
   )
 
   (module ARM_10_PIN (layer F.Cu) (tedit 516ABA45) (tstamp 52AFBBB2)
-    (at 46.99 39.116)
+    (at 110.5 39)
     (path /52AFEA5F)
     (fp_text reference J1 (at 0.5 -4) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -963,7 +963,7 @@
   )
 
   (module usb_a_male_M701-280442 (layer F.Cu) (tedit 52BF0567) (tstamp 52BF10A1)
-    (at 24.638 16.51)
+    (at 75 32.5)
     (path /52AFA7FE)
     (fp_text reference J2 (at 0 -7.8) (layer F.SilkS) hide
       (effects (font (size 0.75 0.75) (thickness 0.15)))
@@ -991,7 +991,7 @@
   )
 
   (module usb_micro_b_10118193-0001LF (layer F.Cu) (tedit 52BF0E96) (tstamp 52BF10B0)
-    (at 51.816 31.242)
+    (at 89.5 48)
     (path /52AFABB7)
     (fp_text reference J3 (at 0 -5) (layer F.SilkS) hide
       (effects (font (size 0.75 0.75) (thickness 0.15)))
@@ -1024,25 +1024,25 @@
   )
 
   (module usb_a_female_87520-0010BLF (layer F.Cu) (tedit 52BF09E9) (tstamp 52BF10BA)
-    (at 43.18 16.764)
+    (at 122 32.5 90)
     (path /52AFA7BF)
-    (fp_text reference J4 (at 0 -8) (layer F.SilkS) hide
+    (fp_text reference J4 (at 0 -8 90) (layer F.SilkS) hide
       (effects (font (size 0.75 0.75) (thickness 0.15)))
     )
-    (fp_text value USB_FEMALE_A (at -7 -5.42) (layer F.SilkS)
+    (fp_text value USB_FEMALE_A (at -7 -5.42 90) (layer F.SilkS)
       (effects (font (size 0.75 0.75) (thickness 0.15)))
     )
-    (pad 5 thru_hole circle (at -6.57 0) (size 2.75 2.75) (drill 2.3) (layers *.Cu *.Mask F.SilkS)
+    (pad 5 thru_hole circle (at -6.57 0 90) (size 2.75 2.75) (drill 2.3) (layers *.Cu *.Mask F.SilkS)
       (net 7 GND))
-    (pad 5 thru_hole circle (at 6.57 0) (size 2.75 2.75) (drill 2.3) (layers *.Cu *.Mask F.SilkS)
+    (pad 5 thru_hole circle (at 6.57 0 90) (size 2.75 2.75) (drill 2.3) (layers *.Cu *.Mask F.SilkS)
       (net 7 GND))
-    (pad 1 thru_hole rect (at -3.5 -2.71) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
+    (pad 1 thru_hole rect (at -3.5 -2.71 90) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
       (net 11 N-0000011))
-    (pad 4 thru_hole circle (at 3.5 -2.71) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
+    (pad 4 thru_hole circle (at 3.5 -2.71 90) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
       (net 7 GND))
-    (pad 2 thru_hole circle (at -1 -2.71) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
+    (pad 2 thru_hole circle (at -1 -2.71 90) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
       (net 46 USB_DP))
-    (pad 3 thru_hole circle (at 1 -2.71) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
+    (pad 3 thru_hole circle (at 1 -2.71 90) (size 1.2 1.2) (drill 0.92) (layers *.Cu *.Mask F.SilkS)
       (net 45 USB_DM))
   )
 
