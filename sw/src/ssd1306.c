@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include "MKL25Z4.h"
 #include "delay.h"
+#include "noahs_face.h"
 
 #define SSD1306_SIZEOF_SCREENBUF (128*64/8)
 
@@ -182,13 +183,13 @@ void ssd1306_init(void)
 
     ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
 
-    // set display blank
+    // set display to noahs face
     ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
     ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
     ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
 
     for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
-        ssd1306_data(0);
+        ssd1306_data(noahs_face[i]);
     }
 }
 

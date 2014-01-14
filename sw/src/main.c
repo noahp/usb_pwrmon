@@ -65,7 +65,7 @@ int main(void) {
         main_led();
 
         // oled task
-        main_oled();
+        //main_oled();
     }
 
     return 0;
