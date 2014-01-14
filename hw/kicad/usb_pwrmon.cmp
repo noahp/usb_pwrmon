@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-14)-product date = Sat 28 Dec 2013 12:47:28 PM EST
+Cmp-Mod V01 Created by CvPcb (2013-jul-14)-product date = Sun 12 Jan 2014 05:45:36 PM EST
 
 BeginCmp
 TimeStamp = /527EE765;
@@ -194,6 +194,13 @@ TimeStamp = /52AFF3C5;
 Reference = R9;
 ValeurCmp = 330R;
 IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /52D1FA15;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = spst_pushbutton_smd;
 EndCmp
 
 BeginCmp
