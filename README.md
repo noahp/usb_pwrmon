@@ -8,7 +8,7 @@ Schematic
 =====
 https://github.com/noahp/usb_pwrmon/raw/oled_brkout2/hw/oled_brkout_v02.pdf
 
-PCB render (v0.1, oshpark)
+PCB render (v0.2, oshpark)
 =====
-![front pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/front.png)
-![back pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout/hw/back.png)
+![front pcb](https://raw.github.com/noahp/usb_pwrmon/oled_brkout_v0.2_final_docs/hw/front.png)
+![back pcb](https://raw2.github.com/noahp/usb_pwrmon/oled_brkout_v0.2_final_docs/hw/back.png)
