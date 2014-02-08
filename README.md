@@ -36,5 +36,5 @@ http://www.mouser.com/Search/ProductDetail.aspx?R=1571621-1virtualkey50660000vir
 usb connectors
 -----
 [Male A](http://www.mouser.com/ProductDetail/Harwin/M701-280442/?qs=sGAEpiMZZMulM8LPOQ%252bykzAp4yt8IxVbCc8aWdWbf8M%3d)  
-[Female A](http://www.mouser.com/ProductDetail/Amphenol-Commercial-Products/UE27-AE54-10H/?qs=sGAEpiMZZMulM8LPOQ%252bykw%252bfOn6%2f1nNEMAnCnkTLhVc%3d)  
+[Female A](http://www.mouser.com/ProductDetail/Amphenol-Commercial-Products/UE27AC5410H/?qs=sGAEpiMZZMulM8LPOQ%252byk4r5VEz1yZV2Iljm%2fKqttNs%3d)  
 
