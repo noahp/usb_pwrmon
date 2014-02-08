@@ -37,6 +37,4 @@ usb connectors
 -----
 [Male A](http://www.mouser.com/ProductDetail/Harwin/M701-280442/?qs=sGAEpiMZZMulM8LPOQ%252bykzAp4yt8IxVbCc8aWdWbf8M%3d)  
 [Female A](http://www.mouser.com/ProductDetail/Amphenol-Commercial-Products/UE27AC5410H/?qs=sGAEpiMZZMulM8LPOQ%252byk4r5VEz1yZV2Iljm%2fKqttNs%3d)  
-
-[Micro B](http://www.mouser.com/ProductDetail/FCI/10118192-0001LF/?qs=sGAEpiMZZMulM8LPOQ%252byk2%252bTbV8%2f2X5vivRX5xKgOBI%3d)
-
+[Micro B](http://www.mouser.com/ProductDetail/FCI/10118192-0001LF/?qs=sGAEpiMZZMulM8LPOQ%252byk2%252bTbV8%2f2X5vivRX5xKgOBI%3d)  
