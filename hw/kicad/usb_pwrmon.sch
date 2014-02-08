@@ -685,7 +685,7 @@ F 3 "~" H 1800 7400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 2450 5000 1    60   Input ~ 0
-MON_USB_DM
+MON_USB_DP
 Text GLabel 2600 5150 1    60   Input ~ 0
 MON_USB_DM
 Text GLabel 2300 4850 1    60   Input ~ 0
@@ -725,7 +725,7 @@ Wire Wire Line
 Text GLabel 1400 7400 0    60   Input ~ 0
 MON_USB_DM
 Text GLabel 1400 6950 0    60   Input ~ 0
-MON_USB_DM
+MON_USB_DP
 Wire Wire Line
 	1400 6950 1500 6950
 Wire Wire Line
@@ -1051,7 +1051,7 @@ F 3 "~" H 5600 2050 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6000 2050 2    60   Input ~ 0
-TRGT_USB_DM
+TRGT_USB_DP
 Text GLabel 6000 2350 2    60   Input ~ 0
 TRGT_USB_DM
 Wire Wire Line
