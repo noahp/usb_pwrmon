@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/25/2014 7:58:17 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/25/2014 8:36:35 PM
 
 BeginCmp
 TimeStamp = /52AFB50D;
@@ -207,7 +207,7 @@ BeginCmp
 TimeStamp = /530D3511;
 Reference = U2;
 ValeurCmp = MKL02ZXVFG4;
-IdModule  = MKL24Z64VFM4;
+IdModule  = MKL02_QFN16;
 EndCmp
 
 BeginCmp
