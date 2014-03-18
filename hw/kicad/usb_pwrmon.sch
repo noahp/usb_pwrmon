@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "26 feb 2014"
+Date "18 mar 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -960,17 +960,6 @@ F 3 "~" H 1300 5850 60  0000 C CNN
 	1    1300 5850
 	1    0    0    -1  
 $EndComp
-$Comp
-L TST P4
-U 1 1 530D58A2
-P 1450 5850
-F 0 "P4" H 1450 6150 40  0000 C CNN
-F 1 "TST" H 1450 6100 30  0000 C CNN
-F 2 "~" H 1450 5850 60  0000 C CNN
-F 3 "~" H 1450 5850 60  0000 C CNN
-	1    1450 5850
-	1    0    0    -1  
-$EndComp
 Text GLabel 1000 5950 3    60   Input ~ 0
 SERIAL_TX
 Text GLabel 1150 5950 3    60   Input ~ 0
@@ -986,14 +975,25 @@ F 3 "" H 1300 5950 60  0000 C CNN
 	1    1300 5950
 	1    0    0    -1  
 $EndComp
-Text GLabel 1450 5950 3    60   Input ~ 0
-USB_VBUS
-Wire Wire Line
-	1450 5950 1450 5850
 Wire Wire Line
 	1300 5850 1300 5950
 Wire Wire Line
 	1150 5950 1150 5850
 Wire Wire Line
 	1000 5850 1000 5950
+$Comp
+L TST P4
+U 1 1 530D58A2
+P 1450 5850
+F 0 "P4" H 1450 6150 40  0000 C CNN
+F 1 "TST" H 1450 6100 30  0000 C CNN
+F 2 "~" H 1450 5850 60  0000 C CNN
+F 3 "~" H 1450 5850 60  0000 C CNN
+	1    1450 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 5950 1450 5850
+Text GLabel 1450 5950 3    60   Input ~ 0
+USB_VBUS
 $EndSCHEMATC
