@@ -114,7 +114,7 @@ F 3 "~" H 8200 2700 60  0000 C CNN
 $EndComp
 NoConn ~ 8500 2400
 Text GLabel 7750 2150 0    60   Input ~ 0
-+3.3
++3.3v
 $Comp
 L GND #PWR02
 U 1 1 527EE54D
@@ -911,7 +911,7 @@ Wire Wire Line
 Wire Wire Line
 	6650 3750 6650 3850
 Text GLabel 6750 3250 2    60   Input ~ 0
-+3.3
++3.3v
 Connection ~ 6650 3250
 Text GLabel 5100 5450 2    60   Input ~ 0
 SERIAL_RX
@@ -981,21 +981,6 @@ Wire Wire Line
 	1150 5950 1150 5850
 Wire Wire Line
 	1000 5850 1000 5950
-$Comp
-L TST P4
-U 1 1 530D58A2
-P 1450 5850
-F 0 "P4" H 1450 6150 40  0000 C CNN
-F 1 "+5" H 1450 6100 30  0000 C CNN
-F 2 "~" H 1450 5850 60  0000 C CNN
-F 3 "~" H 1450 5850 60  0000 C CNN
-	1    1450 5850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1450 5950 1450 5850
-Text GLabel 1450 5950 3    60   Input ~ 0
-USB_VBUS
 Text GLabel 2950 5950 0    60   Input ~ 0
 SW_SNS
 Wire Wire Line
