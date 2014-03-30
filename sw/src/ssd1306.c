@@ -7,7 +7,7 @@
 #include "ssd1306.h"
 #include "font_5x8.h"
 #include <stdint.h>
-#include "MKL25Z4.h"
+#include "MKL26Z4.h"
 #include "delay.h"
 #include "noahs_face.h"
 
@@ -65,7 +65,7 @@ void ssd1306_command(uint8_t c)
     // d/c pin low for command mode.
     CLR_DC();
     // write the command
-    SPI0_D = c;
+    SPI0_DL = c;
 }
 
 void ssd1306_data(uint8_t c)
@@ -76,7 +76,7 @@ void ssd1306_data(uint8_t c)
     // d/c pin high for data mode.
     SET_DC();
     // write the command
-    SPI0_D = c;
+    SPI0_DL = c;
 }
 
 void ssd1306_init(void)
@@ -87,7 +87,8 @@ void ssd1306_init(void)
     /*
         presently:
 
-        blue    3.3v        -
+        //blue    3.3v        -
+//        blue    3.3v        p32     d7
         black   cs          p25     c4/spi0_pcs0
         white   spi_clk     p26     c5/spi0_sck
         gray    spi_mosi    p27     c6/spi0_mosi
@@ -100,6 +101,12 @@ void ssd1306_init(void)
     // enable clocks for PORTC & PORTD
     SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
     SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
+
+//    // pin 32, d7 output for +3.3v
+//    PORTD_PCR7 = PORT_PCR_MUX(1);   // gpio
+//    GPIOD_PCOR = (1 << 7);          // high initially
+//    GPIOD_PDDR |= (1 << 7);         // output mode
+
     // pin 28, c7 output for rst
     PORTC_PCR7 = PORT_PCR_MUX(1);   // gpio
     GPIOC_PCOR = (1 << 7);          // low initially

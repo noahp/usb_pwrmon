@@ -29,7 +29,7 @@
 		</Linker>
 		<Unit filename="Makefile" />
 		<Unit filename="link.ld" />
-		<Unit filename="src/MKL25Z4.h" />
+		<Unit filename="src/MKL26Z4.h" />
 		<Unit filename="src/delay.c">
 			<Option compilerVar="CC" />
 		</Unit>
