@@ -1,51 +1,51 @@
-Cmp-Mod V01 Created by CvPcb (2013-03-04 BZR 3984)-stable date = 10/11/2013 4:06:49 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 4/23/2014 8:32:22 PM
 
 BeginCmp
-TimeStamp = /512A23CC;
+TimeStamp = /53585BD9;
 Reference = C1;
 ValeurCmp = C;
-IdModule  = SM0603;
+IdModule  = SM0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A24C5;
+TimeStamp = /53585610;
+Reference = J1;
+ValeurCmp = USB_MICRO_B;
+IdModule  = usb_micro_b_smt;
+EndCmp
+
+BeginCmp
+TimeStamp = /53585B37;
+Reference = J2;
+ValeurCmp = USB_FEMALE_A;
+IdModule  = usb_female_a;
+EndCmp
+
+BeginCmp
+TimeStamp = /535856F3;
 Reference = P1;
-ValeurCmp = VLOAD+;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A24C9;
-Reference = P2;
-ValeurCmp = VBUS;
+ValeurCmp = GND;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24CC;
-Reference = P3;
-ValeurCmp = ADC_IN;
+Reference = P2;
+ValeurCmp = ADC;
 IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
 TimeStamp = /512A24D2;
+Reference = P3;
+ValeurCmp = LOAD;
+IdModule  = TEST_0.100;
+EndCmp
+
+BeginCmp
+TimeStamp = /512A24C9;
 Reference = P4;
-ValeurCmp = VLOAD-;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /52585AAF;
-Reference = P5;
-ValeurCmp = SHTDN;
-IdModule  = TEST_0.100;
-EndCmp
-
-BeginCmp
-TimeStamp = /5128FA79;
-Reference = P8;
-ValeurCmp = GND;
+ValeurCmp = +5V;
 IdModule  = TEST_0.100;
 EndCmp
 
@@ -57,31 +57,10 @@ IdModule  = lvk12;
 EndCmp
 
 BeginCmp
-TimeStamp = /512A232E;
-Reference = R2;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /512A2310;
-Reference = R3;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /513DD91F;
-Reference = R4;
-ValeurCmp = R;
-IdModule  = SM0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /52573E1F;
+TimeStamp = /535858F3;
 Reference = U1;
-ValeurCmp = MAX9636;
-IdModule  = MAX9636;
+ValeurCmp = MAX9938;
+IdModule  = sot23-5_noah;
 EndCmp
 
 EndListe
