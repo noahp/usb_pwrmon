@@ -84,7 +84,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory gerbers))
   )
 
   (net 0 "")
@@ -303,8 +303,8 @@
   (gr_arc (start 212.471 95.123) (end 210.566 95.123) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_arc (start 218.821 95.123) (end 218.821 93.218) (angle 90) (layer Edge.Cuts) (width 0.15))
 
-  (segment (start 214.946 95.399) (end 215.19642 95.14858) (width 0.254) (layer F.Cu) (net 1) (status C00000))
-  (segment (start 215.19642 95.14858) (end 215.19642 93.726) (width 0.254) (layer F.Cu) (net 1) (tstamp 53586467) (status C00000))
+  (segment (start 214.946 95.399) (end 215.19642 95.14858) (width 0.254) (layer F.Cu) (net 1))
+  (segment (start 215.19642 95.14858) (end 215.19642 93.726) (width 0.254) (layer F.Cu) (net 1) (tstamp 53586467))
   (segment (start 212.471 95.123) (end 214.67 95.123) (width 0.5) (layer F.Cu) (net 1))
   (segment (start 214.67 95.123) (end 214.946 95.399) (width 0.5) (layer F.Cu) (net 1) (tstamp 535863B7))
   (segment (start 216.596 102.743) (end 218.821 102.743) (width 0.5) (layer F.Cu) (net 2))
