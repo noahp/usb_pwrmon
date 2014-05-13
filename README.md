@@ -15,4 +15,4 @@ http://www.mouser.com/ProductDetail/Ohmite/LVK12R010DER/?qs=sGAEpiMZZMtlleCFQhR%
 
 opamp:
 -----
-max9366
+max9938
