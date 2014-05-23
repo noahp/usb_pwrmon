@@ -1,23 +1,9 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/26/2014 9:17:03 PM
-
-BeginCmp
-TimeStamp = /52AFB50D;
-Reference = C1;
-ValeurCmp = 39nF;
-IdModule  = SM0402;
-EndCmp
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 5/22/2014 8:26:55 PM
 
 BeginCmp
 TimeStamp = /52AFC29E;
 Reference = C2;
 ValeurCmp = 0.1uF;
-IdModule  = SM0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /52AFB287;
-Reference = C3;
-ValeurCmp = 1300pF;
 IdModule  = SM0402;
 EndCmp
 
@@ -134,20 +120,6 @@ IdModule  = TEST_0.100;
 EndCmp
 
 BeginCmp
-TimeStamp = /52AFAE27;
-Reference = R1;
-ValeurCmp = 25K;
-IdModule  = SM0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /52AFAE3C;
-Reference = R2;
-ValeurCmp = 8K;
-IdModule  = SM0402;
-EndCmp
-
-BeginCmp
 TimeStamp = /52AFF3C5;
 Reference = R3;
 ValeurCmp = 330R;
@@ -190,10 +162,10 @@ IdModule  = spst_pushbutton_smd;
 EndCmp
 
 BeginCmp
-TimeStamp = /52AFAB94;
+TimeStamp = /5378C729;
 Reference = U1;
-ValeurCmp = AD8293G80;
-IdModule  = sot23-8;
+ValeurCmp = MAX9938;
+IdModule  = sot23-5_noah;
 EndCmp
 
 BeginCmp
