@@ -23,6 +23,7 @@ http://rusticengineering.com/2010/05/10/oled-0-96-breakout-board-sh1101a-driver/
 micro
 -----
 freescale ksz24/25/26
+http://cache.freescale.com/files/32bit/doc/data_sheet/KL02P32M48SF0.pdf
 
 sns resist:
 -----
