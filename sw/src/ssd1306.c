@@ -141,8 +141,8 @@ void ssd1306_init(void)
     SPI0_C1 |= (SPI_C1_MSTR_MASK | SPI_C1_SSOE_MASK | SPI_C1_CPOL_MASK);
     SPI0_C2 |= SPI_C2_MODFEN_MASK;
 
-    // select clock divider- SPPR = 8, SPR = 1 (4)
-    SPI0_BR = (3<<SPI_BR_SPPR_SHIFT) | (0x3);
+    // select clock divider- SPPR = 0, SPR = 0 (2)
+    SPI0_BR = SPI_BR_SPPR(0) | SPI_BR_SPR(0);
 
     // turn on spi
     SPI0_C1 |= SPI_C1_SPE_MASK;
