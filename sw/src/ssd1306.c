@@ -175,8 +175,8 @@ void ssd1306_init(void)
     ssd1306_command(0x14);                                  // internall VCC
     ssd1306_command(SSD1306_MEMORYMODE);                    // 0x20
     ssd1306_command(0x00);                                  // 0x0 act like ks0108
-    ssd1306_command(SSD1306_SEGREMAP | 0x1);
-    ssd1306_command(SSD1306_COMSCANDEC);
+    ssd1306_command(SSD1306_SEGREMAP /*| 0x1*/);
+    ssd1306_command(SSD1306_COMSCANINC);
     ssd1306_command(SSD1306_SETCOMPINS);                    // 0xDA
     ssd1306_command(0x12);
     ssd1306_command(SSD1306_SETCONTRAST);                   // 0x81
@@ -200,10 +200,51 @@ void ssd1306_init(void)
     }
 }
 
+// set cursor back to selected line number
+void ssd1306_setLine(unsigned char lineNum)
+{
+    lineNum = (lineNum % 8)*8;
+    lineNum = 64 - lineNum;
+//    ssd1306_command(SSD1306_SETSTARTLINE | lineNum);
+    ssd1306_command(SSD1306_SETDISPLAYOFFSET);
+    ssd1306_command(lineNum);
+}
+
+
 // write a string to the screen. pos is character coords,
 // with 0,0=0 top left, ex: 1,4=(1*19)+4=23.
 // automatically wraps text at column end.
 void ssd1306_writeString(char *str, uint32_t pos)
+{
+    uint32_t i = 0, j;
+
+    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
+    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
+    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
+
+    // for each chr in the string, print it to the display
+    while((*str != '\0') && ((i+1)*6*8 < 128*64)){
+        if(((*str-0x20) < 96) && (*str >= 0x20)){
+            for(j=0; j<5; j++){
+                ssd1306_data(font5x8[(*str-0x20)*5+j]);
+            }
+        }
+        else{
+            for(j=0; j<5; j++){
+                ssd1306_data(0);
+            }
+        }
+        ssd1306_data(0);
+        str++;
+        i++;
+    }
+    i = (128*64-i*6*8)/8;
+    while(i--){
+        ssd1306_data(0);
+    }
+}
+
+void ssd1306_writeStringSize2(char *str, uint32_t pos)
 {
     uint32_t i = 0, j;
 
