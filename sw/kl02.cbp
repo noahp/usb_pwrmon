@@ -7,7 +7,7 @@
 		<Option compiler="armelfgcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/kl24.elf" prefix_auto="0" extension_auto="0" />
+				<Option output="bin/Debug/kl02.elf" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="bin/Debug" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
@@ -16,7 +16,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<ExtraCommands>
-					<Add after="arm-none-eabi-objcopy -O ihex bin/Debug/kl24.elf bin/Debug/kl24.hex" />
+					<Add after="arm-none-eabi-objcopy -O ihex bin/Debug/kl02.elf bin/Debug/kl02.hex" />
 				</ExtraCommands>
 			</Target>
 		</Build>
@@ -25,11 +25,11 @@
 			<Add option="-mthumb -mcpu=cortex-m0plus" />
 		</Compiler>
 		<Linker>
-			<Add option="--specs=nano.specs -Wl,--gc-sections,-Map,kl24.map,-Tlink.ld" />
+			<Add option="--specs=nano.specs -Wl,--gc-sections,-Map,kl02.map,-Tlink.ld" />
 		</Linker>
 		<Unit filename="Makefile" />
 		<Unit filename="link.ld" />
-		<Unit filename="src/MKL26Z4.h" />
+		<Unit filename="src/MKL02Z4.h" />
 		<Unit filename="src/delay.c">
 			<Option compilerVar="CC" />
 		</Unit>

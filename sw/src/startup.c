@@ -1,5 +1,5 @@
 
-#include "MKL26Z4.h"
+#include "MKL02Z4.h"
 #include "interrupts.h"
 
 //*****************************************************************************
@@ -84,24 +84,24 @@ void (* const g_pfnVectors[])(void) =
 
 void StartupInitClock(void)
 {
-    // select Mid range of MCG_C4[DRST_DRS], and select DMX32=1.
-    // from datasheet, in FEI MCG mode (which is what is used here),
-    // setting C4[DMX32] is not recommended:
-    //
-    // "If the internal reference is trimmed to a frequency above 32.768 kHz,
-    //  the greater FLL multiplication factor could potentially push the
-    //  microcontroller system clock out of specification and damage the part."
-    //
-    // do it anyway to try to get closer to 48MHz. the mchck guys do it!
-    // read-modify-write.
-    MCG_C4 = (MCG_C4 & (~MCG_C4_DRST_DRS_MASK) & (~MCG_C4_DMX32_MASK)) |
-              MCG_C4_DRST_DRS(0x1) | (0x1 << MCG_C4_DMX32_SHIFT);
-
-    // debug, output bus clock on pin 24 (C3)
-    // set CLKOUT select for "Bus clock", read-modify-write.
-    SIM_SOPT2 = (SIM_SOPT2 & ~(SIM_SOPT2_CLKOUTSEL_MASK)) | SIM_SOPT2_CLKOUTSEL(0x2);
-    // Enable PortC clock gate
-    SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
-    // Set pin for CLKOUT
-    PORTC_PCR3 = PORT_PCR_MUX(5) | PORT_PCR_DSE_MASK;
+//    // select Mid range of MCG_C4[DRST_DRS], and select DMX32=1.
+//    // from datasheet, in FEI MCG mode (which is what is used here),
+//    // setting C4[DMX32] is not recommended:
+//    //
+//    // "If the internal reference is trimmed to a frequency above 32.768 kHz,
+//    //  the greater FLL multiplication factor could potentially push the
+//    //  microcontroller system clock out of specification and damage the part."
+//    //
+//    // do it anyway to try to get closer to 48MHz. the mchck guys do it!
+//    // read-modify-write.
+//    MCG_C4 = (MCG_C4 & (~MCG_C4_DRST_DRS_MASK) & (~MCG_C4_DMX32_MASK)) |
+//              MCG_C4_DRST_DRS(0x1) | (0x1 << MCG_C4_DMX32_SHIFT);
+//
+//    // debug, output bus clock on pin 24 (C3)
+//    // set CLKOUT select for "Bus clock", read-modify-write.
+//    SIM_SOPT2 = (SIM_SOPT2 & ~(SIM_SOPT2_CLKOUTSEL_MASK)) | SIM_SOPT2_CLKOUTSEL(0x2);
+//    // Enable PortC clock gate
+//    SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
+//    // Set pin for CLKOUT
+//    PORTC_PCR3 = PORT_PCR_MUX(5) | PORT_PCR_DSE_MASK;
 }

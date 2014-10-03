@@ -3,10 +3,10 @@ SEARCH_DIR(.)
 
 MEMORY
 {
-  INTERRUPTS (rx)  : ORIGIN = 0x0,  LENGTH = 0xC0         /* 192 */
-  FLASHCONFIG(rx)  : ORIGIN = 0x400,  LENGTH = 16         /* 16 bytes */
-  TEXT       (rx)  : ORIGIN = 0x410, LENGTH = 0x1FBF0     /* 128K - 0x410 */
-  RAM        (rwx) : ORIGIN = 0x1FFFF000, LENGTH = 0x4000 /* 16K */
+  INTERRUPTS (rx)  : ORIGIN = 0x0,          LENGTH = 192        /* 192 */
+  FLASHCONFIG(rx)  : ORIGIN = 0x400,        LENGTH = 16         /* 16 bytes */
+  TEXT       (rx)  : ORIGIN = 0x410,        LENGTH = 32K - 0x410
+  RAM        (rwx) : ORIGIN = 0x1FFFFC00,   LENGTH = 4K
 }
 
 /* Section Definitions */

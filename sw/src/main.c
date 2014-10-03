@@ -1,5 +1,5 @@
 
-#include "MKL26Z4.h"
+#include "MKL02Z4.h"
 #include "systick.h"
 #include "delay.h"
 #include "ssd1306.h"
@@ -13,14 +13,14 @@ void main_init_io(void)
     // enable clocks for PORTA
     SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
 
-    // set B0 to GPIO
-    PORTB_PCR0 = PORT_PCR_MUX(1);
+    // set A4 to GPIO
+    PORTA_PCR4 = PORT_PCR_MUX(1);
 
-    // set output B0 low (LED on initially)
-    GPIOB_PCOR = (1 << 0);
+    // set output A4 high (LED on initially)
+    GPIOA_PSOR = (1 << 4);
 
     // set B0 DDR to output
-    GPIOB_PDDR |= (1 << 0);
+    GPIOA_PDDR |= (1 << 4);
 }
 
 void main_led(void)
@@ -31,7 +31,7 @@ void main_led(void)
     if(systick_getMs() - blinkTime > 250){
         blinkTime = systick_getMs();
         // toggle
-        GPIOB_PTOR = (1 << 0);
+        GPIOA_PTOR = (1 << 4);
     }
 }
 
