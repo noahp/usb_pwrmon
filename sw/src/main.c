@@ -10,8 +10,8 @@ void main_init_io(void)
     // disable COP
     SIM_COPC = 0;
 
-    // enable clocks for PORTB
-    SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+    // enable clocks for PORTA
+    SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
 
     // set B0 to GPIO
     PORTB_PCR0 = PORT_PCR_MUX(1);
@@ -60,14 +60,14 @@ void main_oled(void)
 int main(void) {
     // initialize the necessary
     main_init_io();
-    ssd1306_init();
+//    ssd1306_init();
 
     while(1){
         // led task
         main_led();
 
-        // oled task
-        main_oled();
+//        // oled task
+//        main_oled();
     }
 
     return 0;
