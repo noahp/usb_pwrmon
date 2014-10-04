@@ -60,14 +60,14 @@ void main_oled(void)
 int main(void) {
     // initialize the necessary
     main_init_io();
-//    ssd1306_init();
+    ssd1306_init();
 
     while(1){
         // led task
         main_led();
 
-//        // oled task
-//        main_oled();
+        // oled task
+        main_oled();
     }
 
     return 0;

@@ -14,14 +14,10 @@
 #define SSD1306_SIZEOF_SCREENBUF (128*64/8)
 
 // some pin abstractions
-#define SET_RST()   //(GPIOC_PSOR = (1 << 7))
-#define CLR_RST()   //(GPIOC_PCOR = (1 << 7))
-#define SET_RW()    //(GPIOD_PSOR = (1 << 4))
-#define CLR_RW()    //(GPIOD_PCOR = (1 << 4))
-#define SET_DC()    //(GPIOD_PSOR = (1 << 6))
-#define CLR_DC()    //(GPIOD_PCOR = (1 << 6))
-#define SET_ERD()   //(GPIOD_PSOR = (1 << 5))
-#define CLR_ERD()   //(GPIOD_PCOR = (1 << 5))
+#define SET_RST()   //(GPIOB_PSOR = (1 << 5))
+#define CLR_RST()   //(GPIOB_PCOR = (1 << 5))
+#define SET_DC()    //(GPIOA_PSOR = (1 << 6))
+#define CLR_DC()    //(GPIOA_PCOR = (1 << 6))
 
 // ssd1306 registers etc.
 #define SSD1306_SETCONTRAST				0x81
@@ -59,145 +55,114 @@
 
 void ssd1306_command(uint8_t c)
 {
-//    // wait until tx empty flag is set
-//    while(!(SPI0_S & SPI_S_SPTEF_MASK));
-//
-//    // d/c pin low for command mode.
-//    CLR_DC();
-//    // write the command
-//    SPI0_DL = c;
+    // wait until tx empty flag is set
+    while(!(SPI0_S & SPI_S_SPTEF_MASK));
+
+    // d/c pin low for command mode.
+    CLR_DC();
+    // write the command
+    SPI0_D = c;
 }
 
 void ssd1306_data(uint8_t c)
 {
-//    // wait until tx empty flag is set
-//    while(!(SPI0_S & SPI_S_SPTEF_MASK));
-//
-//    // d/c pin high for data mode.
-//    SET_DC();
-//    // write the command
-//    SPI0_DL = c;
+    // wait until tx empty flag is set
+    while(!(SPI0_S & SPI_S_SPTEF_MASK));
+
+    // d/c pin high for data mode.
+    SET_DC();
+    // write the command
+    SPI0_D = c;
 }
 
 void ssd1306_init(void)
 {
-//    uint32_t i;
-//
-//    // init necessary io
-//    /*
-//        presently:
-//
-//        //blue    3.3v        -
-////        blue    3.3v        p32     d7
-//        black   cs          p25     c4/spi0_pcs0
-//        white   spi_clk     p26     c5/spi0_sck
-//        gray    spi_mosi    p27     c6/spi0_mosi
-//        purple  rst         p28     c7(/spi0_miso)
-//        yellow  r/w         p29     d4
-//        orange  e/rd        p30     d5
-//        red     d/c         p31     d6
-//    */
-//
-//    // enable clocks for PORTC & PORTD
-//    SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
-//    SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
-//
-////    // pin 32, d7 output for +3.3v
-////    PORTD_PCR7 = PORT_PCR_MUX(1);   // gpio
-////    GPIOD_PCOR = (1 << 7);          // high initially
-////    GPIOD_PDDR |= (1 << 7);         // output mode
-//
-//    // pin 28, c7 output for rst
-//    PORTC_PCR7 = PORT_PCR_MUX(1);   // gpio
-//    GPIOC_PCOR = (1 << 7);          // low initially
-//    GPIOC_PDDR |= (1 << 7);         // output mode
-//
-//    // pin 29, d4 output for r/w
-//    PORTD_PCR4 = PORT_PCR_MUX(1);   // gpio
-//    GPIOD_PCOR = (1 << 4);          // low, perm
-//    GPIOD_PDDR |= (1 << 4);         // output mode
-//
-//    // pin 30, d5 output for e/rd
-//    PORTD_PCR5 = PORT_PCR_MUX(1);   // gpio
-//    GPIOD_PCOR = (1 << 5);          // low, perm.
-//    GPIOD_PDDR |= (1 << 5);         // output mode
-//
-//    // pin 31, d6 output for dc
-//    PORTD_PCR6 = PORT_PCR_MUX(1);   // gpio
-//    GPIOD_PCOR = (1 << 6);          // low initially
-//    GPIOD_PDDR |= (1 << 6);         // output mode
-//
-//    // init spi0
-//    // configure io pins for spi- alt 2
-//    // PTC4-5-6
-//    PORTC_PCR4 = PORT_PCR_MUX(2);
-//    PORTC_PCR5 = PORT_PCR_MUX(2);
-//    PORTC_PCR6 = PORT_PCR_MUX(2);
-//
-//    // enable SPI0 module
-//    SIM_SCGC4 |= SIM_SCGC4_SPI0_MASK;
-//
-//    // configure as master, cs output driven automatically, CPOL=1
-//    SPI0_C1 |= (SPI_C1_MSTR_MASK | SPI_C1_SSOE_MASK | SPI_C1_CPOL_MASK);
-//    SPI0_C2 |= SPI_C2_MODFEN_MASK;
-//
-//    // select clock divider- SPPR = 0, SPR = 0 (2)
-//    SPI0_BR = SPI_BR_SPPR(0) | SPI_BR_SPR(0);
-//
-//    // turn on spi
-//    SPI0_C1 |= SPI_C1_SPE_MASK;
-//
-//    // do some setup on the oled display
-//    // wait a ms after 3.3v comes up on reset
-//    delay_ms(1);
-//    // reset low for 10ms
-//    CLR_RST();  // low
-//    delay_ms(10);
-//    SET_RST();  // now high
-//    // r/w and e/rd stays low all the time, for spi.
-//    CLR_RW();
-//    CLR_ERD();
-//
-//    // give it a few ms after reset goes high
-//    delay_ms(5);
-//
-//    // now initialize display controller
-//    // Init sequence for 128x64 OLED module
-//    ssd1306_command(SSD1306_DISPLAYOFF);                    // 0xAE
-//    ssd1306_command(SSD1306_SETDISPLAYCLOCKDIV);            // 0xD5
-//    ssd1306_command(0x80);                                  // the suggested ratio 0x80
-//    ssd1306_command(SSD1306_SETMULTIPLEX);                  // 0xA8
-//    ssd1306_command(0x3F);
-//    ssd1306_command(SSD1306_SETDISPLAYOFFSET);              // 0xD3
-//    ssd1306_command(0x0);                                   // no offset
-//    ssd1306_command(SSD1306_SETSTARTLINE | 0x0);            // line #0
-//    ssd1306_command(SSD1306_CHARGEPUMP);                    // 0x8D
-//    ssd1306_command(0x14);                                  // internall VCC
-//    ssd1306_command(SSD1306_MEMORYMODE);                    // 0x20
-//    ssd1306_command(0x00);                                  // 0x0 act like ks0108
-//    ssd1306_command(SSD1306_SEGREMAP /*| 0x1*/);
-//    ssd1306_command(SSD1306_COMSCANINC);
-//    ssd1306_command(SSD1306_SETCOMPINS);                    // 0xDA
-//    ssd1306_command(0x12);
-//    ssd1306_command(SSD1306_SETCONTRAST);                   // 0x81
-//    ssd1306_command(0xCF);                                  // internal VCC
-//    ssd1306_command(SSD1306_SETPRECHARGE);                  // 0xd9
-//    ssd1306_command(0xF1);                                  // internal VCC
-//    ssd1306_command(SSD1306_SETVCOMDETECT);                 // 0xDB
-//    ssd1306_command(0x40);
-//    ssd1306_command(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
-//    ssd1306_command(SSD1306_NORMALDISPLAY);                 // 0xA6
-//
-//    ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
-//
-//    // set display to noahs face
-//    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
-//    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
-//    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
-//
-//    for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
-//        ssd1306_data(noahs_face[i]);
-//    }
+    uint32_t i;
+
+    // init necessary io
+
+    // enable clocks for PORTA & PORTB
+    SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
+    SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+
+    // pin 13, B5 output for rst
+    PORTB_PCR5 = PORT_PCR_MUX(1);   // gpio
+    GPIOB_PCOR = (1 << 5);          // low initially
+    GPIOB_PDDR |= (1 << 5);         // output mode
+
+    // pin 6, a6 output for dc
+    PORTA_PCR6 = PORT_PCR_MUX(1);   // gpio
+    GPIOA_PCOR = (1 << 6);          // low initially
+    GPIOA_PDDR |= (1 << 6);         // output mode
+
+    // init spi0
+    // configure io pins for spi
+    // PTA5, 7, PTB0
+    PORTA_PCR5 = PORT_PCR_MUX(3);
+    PORTA_PCR7 = PORT_PCR_MUX(3);
+    PORTB_PCR0 = PORT_PCR_MUX(3);
+
+    // enable SPI0 module
+    SIM_SCGC4 |= SIM_SCGC4_SPI0_MASK;
+
+    // configure as master, cs output driven automatically, CPOL=1
+    SPI0_C1 |= (SPI_C1_MSTR_MASK | SPI_C1_SSOE_MASK | SPI_C1_CPOL_MASK);
+    SPI0_C2 |= SPI_C2_MODFEN_MASK;
+
+    // select clock divider- SPPR = 0, SPR = 0 (2)
+    SPI0_BR = SPI_BR_SPPR(0) | SPI_BR_SPR(0);
+
+    // turn on spi
+    SPI0_C1 |= SPI_C1_SPE_MASK;
+
+    // do some setup on the oled display
+    // wait a ms after 3.3v comes up on reset
+    delay_ms(1);
+    // reset low for 10ms
+    CLR_RST();  // low
+    delay_ms(10);
+    SET_RST();  // now high
+
+    // give it a few ms after reset goes high
+    delay_ms(5);
+
+    // now initialize display controller
+    // Init sequence for 128x64 OLED module
+    ssd1306_command(SSD1306_DISPLAYOFF);                    // 0xAE
+    ssd1306_command(SSD1306_SETDISPLAYCLOCKDIV);            // 0xD5
+    ssd1306_command(0x80);                                  // the suggested ratio 0x80
+    ssd1306_command(SSD1306_SETMULTIPLEX);                  // 0xA8
+    ssd1306_command(0x3F);
+    ssd1306_command(SSD1306_SETDISPLAYOFFSET);              // 0xD3
+    ssd1306_command(0x0);                                   // no offset
+    ssd1306_command(SSD1306_SETSTARTLINE | 0x0);            // line #0
+    ssd1306_command(SSD1306_CHARGEPUMP);                    // 0x8D
+    ssd1306_command(0x14);                                  // internall VCC
+    ssd1306_command(SSD1306_MEMORYMODE);                    // 0x20
+    ssd1306_command(0x00);                                  // 0x0 act like ks0108
+    ssd1306_command(SSD1306_SEGREMAP /*| 0x1*/);
+    ssd1306_command(SSD1306_COMSCANINC);
+    ssd1306_command(SSD1306_SETCOMPINS);                    // 0xDA
+    ssd1306_command(0x12);
+    ssd1306_command(SSD1306_SETCONTRAST);                   // 0x81
+    ssd1306_command(0xCF);                                  // internal VCC
+    ssd1306_command(SSD1306_SETPRECHARGE);                  // 0xd9
+    ssd1306_command(0xF1);                                  // internal VCC
+    ssd1306_command(SSD1306_SETVCOMDETECT);                 // 0xDB
+    ssd1306_command(0x40);
+    ssd1306_command(SSD1306_DISPLAYALLON_RESUME);           // 0xA4
+    ssd1306_command(SSD1306_NORMALDISPLAY);                 // 0xA6
+
+    ssd1306_command(SSD1306_DISPLAYON);//--turn on oled panel
+
+    // set display to noahs face
+    ssd1306_command(SSD1306_SETLOWCOLUMN | 0x0);  // low col = 0
+    ssd1306_command(SSD1306_SETHIGHCOLUMN | 0x0);  // hi col = 0
+    ssd1306_command(SSD1306_SETSTARTLINE | 0x0); // line #0
+
+    for(i=0; i<SSD1306_SIZEOF_SCREENBUF; i++){
+        ssd1306_data(noahs_face[i]);
+    }
 }
 
 // set cursor back to selected line number
