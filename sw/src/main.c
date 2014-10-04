@@ -14,13 +14,13 @@ void main_init_io(void)
     SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
 
     // set A4 to GPIO
-    PORTA_PCR4 = PORT_PCR_MUX(1);
+    PORTA_PCR3 = PORT_PCR_MUX(1);
 
     // set output A4 high (LED on initially)
-    GPIOA_PSOR = (1 << 4);
+    GPIOA_PSOR = (1 << 3);
 
     // set B0 DDR to output
-    GPIOA_PDDR |= (1 << 4);
+    GPIOA_PDDR |= (1 << 3);
 }
 
 void main_led(void)
@@ -31,7 +31,7 @@ void main_led(void)
     if(systick_getMs() - blinkTime > 250){
         blinkTime = systick_getMs();
         // toggle
-        GPIOA_PTOR = (1 << 4);
+        GPIOA_PTOR = (1 << 3);
     }
 }
 
