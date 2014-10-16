@@ -60,6 +60,11 @@ static void main_init_uart(void)
     UART0_C2 |= UART0_C2_RE_MASK | UART0_C2_TE_MASK;
 }
 
+static void main_init_adc(void)
+{
+
+}
+
 static void main_led(void)
 {
     static uint32_t blinkTime = 0;
