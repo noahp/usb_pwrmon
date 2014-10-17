@@ -42,14 +42,7 @@ static void main_init_uart(void)
     // enable uart0 clock
     SIM_SCGC4 |= SIM_SCGC4_UART0_MASK;
 
-//    // 9600
-//    // set oversampling ratio to 9
-//    // set baud rate register to 500, yields 9600 baud
-//    UART0_C4 = (UART0_C4 & (~UART0_C4_OSR_MASK)) | UART0_C4_OSR(9);
-//    UART0_BDL = (UART0_BDL & (~UART0_BDL_SBR_MASK)) | UART0_BDL_SBR(500 & 0xFF);
-//    UART0_BDH = UART0_BDH_SBR((500 >> 8) & 0xFF);
-
-    // 115200??
+    // 115200 baud.
     // set oversampling ratio to 15
     // set baud rate register to 26, yields ~115384 baud, ~1.6% error
     UART0_C4 = (UART0_C4 & (~UART0_C4_OSR_MASK)) | UART0_C4_OSR(15);
@@ -102,6 +95,7 @@ static void main_uart(void)
     };
     uint32_t data = GPIOA_PDIR;
 
+    // report data on button press
     switch(buttonControl.state){
         default:
             buttonControl.state = IDLE;
@@ -121,15 +115,27 @@ static void main_uart(void)
                 // send a couple of chars
                 main_uart_tx((uint8_t*)"Noah\n\r", sizeof("Noah\n\r") - 1);
 
+                buttonControl.time = systick_getMs();
                 buttonControl.state = DONE;
             }
             break;
 
         case DONE:
+            // back to idle 100ms after release
             if((data & (1 << 4)) != 0){
-                buttonControl.state = IDLE;
+                if(systick_getMs() - buttonControl.state > 100){
+                    buttonControl.state = IDLE;
+                }
             }
             break;
+    }
+
+    // report data on receiving '?' character
+    if(UART0_S1 & UART0_S1_RDRF_MASK){
+        data = UART0_D;
+        if(data == '?'){
+            main_uart_tx((uint8_t*)"Noah\n\r", sizeof("Noah\n\r") - 1);
+        }
     }
 }
 
