@@ -3,6 +3,25 @@
 #include "systick.h"
 #include "delay.h"
 #include "ssd1306.h"
+#include <stdio.h> // sprintf
+
+// need to define _sbrk for sprintf (malloc)
+extern int __end__;
+extern caddr_t _sbrk(int incr);
+extern caddr_t _sbrk(int incr)
+{
+    static unsigned char *heap = NULL;
+    unsigned char *prev_heap;
+
+    if(heap == NULL){
+        heap = (unsigned char *)&__end__;
+    }
+    prev_heap = heap;
+
+    heap += incr;
+
+    return (caddr_t)prev_heap;
+}
 
 static void main_init_io(void)
 {
@@ -55,7 +74,72 @@ static void main_init_uart(void)
 
 static void main_init_adc(void)
 {
+    uint32_t data;
 
+    // enable clocks for PORTB
+    SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
+
+    // enable ADC clock
+    SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
+
+    // select ADC on pin B2
+    //PORTB_PCR2 = PORT_PCR_MUX(0);   // default
+
+    // set 12 bit mode, input clock is bus clock / 2 for 12MHz
+    ADC0_CFG1 = ADC_CFG1_MODE(1) | ADC_CFG1_ADICLK(1);
+
+    // set high speed mode
+    ADC0_CFG2 = ADC_CFG2_ADHSC_MASK;
+
+    // no compare, software trigger, default voltage reference
+    ADC0_SC2 = 0;
+
+    // continuous conversion, hardware average enabled 32 samples
+    ADC0_SC3 = ADC_SC3_ADCO_MASK /*| ADC_SC3_AVGE_MASK | ADC_SC3_AVGS(3)*/;
+
+    // select input channel- also, after continuous mode selected, a write to
+    // SC1A starts the conversion
+    ADC0_SC1A = ADC_SC1_ADCH(4);
+}
+
+#define ADC_BUFSIZE 32
+static struct {
+    uint32_t sum;
+    uint32_t time;
+    uint16_t avgInt;
+    uint16_t avgFrac;
+    uint16_t buf[ADC_BUFSIZE];
+    uint8_t idx;
+} adc_cntrl = {
+    .sum = 0,
+    .time = 0,
+    .idx = 0,
+};
+
+static void main_adc(void)
+{
+    // every 1ms take a sample
+    if(adc_cntrl.time != systick_getMs()){
+        uint32_t data = ADC0_SC1A;
+        if(data & ADC_SC1_COCO_MASK){
+            // conversion complete
+            // remove oldest sample from sum
+            adc_cntrl.idx = (adc_cntrl.idx + 1) % ADC_BUFSIZE;
+            adc_cntrl.sum -= adc_cntrl.buf[adc_cntrl.idx];
+            // add new sample and compute average
+            adc_cntrl.buf[adc_cntrl.idx] = ADC0_RA & 0xFFF;
+            adc_cntrl.sum += adc_cntrl.buf[adc_cntrl.idx];
+            data = adc_cntrl.sum / ADC_BUFSIZE;
+
+            // compute integer and fractional values
+            data *= 330000; // prep to compute voltage
+            data /= 4095;   // now in .000001 V units
+            adc_cntrl.avgInt = data / 100000;
+            adc_cntrl.avgFrac = data - (data / 100000);
+
+            adc_cntrl.time = systick_getMs();
+        }
+    }
 }
 
 static void main_led(void)
@@ -94,6 +178,8 @@ static void main_uart(void)
         .time = 0,
     };
     uint32_t data = GPIOA_PDIR;
+    uint32_t charcount;
+    uint8_t strBuf[32];
 
     // report data on button press
     switch(buttonControl.state){
@@ -113,7 +199,11 @@ static void main_uart(void)
             }
             else if(systick_getMs() - buttonControl.state > 100){
                 // send a couple of chars
-                main_uart_tx((uint8_t*)"Noah\n\r", sizeof("Noah\n\r") - 1);
+                charcount = sprintf((char*)strBuf, "%d.%05dA\n\r",
+                                    adc_cntrl.avgInt, adc_cntrl.avgFrac);
+                if(charcount){
+                    main_uart_tx(strBuf, charcount);
+                }
 
                 buttonControl.time = systick_getMs();
                 buttonControl.state = DONE;
@@ -134,7 +224,11 @@ static void main_uart(void)
     if(UART0_S1 & UART0_S1_RDRF_MASK){
         data = UART0_D;
         if(data == '?'){
-            main_uart_tx((uint8_t*)"Noah\n\r", sizeof("Noah\n\r") - 1);
+            charcount = sprintf((char*)strBuf, "%d.%05dA\n\r",
+                                adc_cntrl.avgInt, adc_cntrl.avgFrac);
+            if(charcount){
+                main_uart_tx(strBuf, charcount);
+            }
         }
     }
 }
@@ -165,6 +259,7 @@ int main(void) {
     // initialize the necessary
     main_init_io();
     main_init_uart();
+    main_init_adc();
     ssd1306_init();
 
     while(1){
@@ -176,6 +271,9 @@ int main(void) {
 
         // uart task
         main_uart();
+
+        // adc task
+        main_adc();
     }
 
     return 0;

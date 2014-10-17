@@ -6,7 +6,8 @@ MEMORY
   INTERRUPTS (rx)  : ORIGIN = 0x0,          LENGTH = 192        /* 192 */
   FLASHCONFIG(rx)  : ORIGIN = 0x400,        LENGTH = 16         /* 16 bytes */
   TEXT       (rx)  : ORIGIN = 0x410,        LENGTH = 32K - 0x410
-  RAM        (rwx) : ORIGIN = 0x1FFFFC00,   LENGTH = 4K
+  RAM        (rwx) : ORIGIN = 0x1FFFFC00,   LENGTH = 1K
+  RAM2       (rwx) : ORIGIN = 0x20000000,   LENGTH = 3K
 }
 
 /* Section Definitions */
@@ -49,7 +50,7 @@ SECTIONS
         *(.data .data.*)
         . = ALIGN(4);
         _edata = . ;
-    } > RAM
+    } > RAM2
 
     /* .bss section which is used for uninitialized data */
     .bss (NOLOAD) :
@@ -61,12 +62,20 @@ SECTIONS
         _ebss = . ;
     } > RAM
 
+    .heap (COPY):
+	{
+		__end__ = .;
+		end = __end__;
+		*(.heap*)
+		__HeapLimit = .;
+	} > RAM
+
     /* stack section */
     .co_stack (NOLOAD):
     {
         . = ALIGN(8);
         *(.co_stack .co_stack.*)
-    } > RAM
+    } > RAM2
 
     . = ALIGN(4);
     _end = . ;

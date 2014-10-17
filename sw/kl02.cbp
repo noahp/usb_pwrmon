@@ -25,7 +25,7 @@
 			<Add option="-mthumb -mcpu=cortex-m0plus" />
 		</Compiler>
 		<Linker>
-			<Add option="--specs=nano.specs -Wl,--gc-sections,-Map,kl02.map,-Tlink.ld" />
+			<Add option="-mthumb -mcpu=cortex-m0plus --specs=nano.specs -Wl,--gc-sections,-Map,kl02.map,-Tlink.ld" />
 		</Linker>
 		<Unit filename="Makefile" />
 		<Unit filename="link.ld" />
