@@ -119,7 +119,7 @@ static void main_uart(void)
             }
             else if(systick_getMs() - buttonControl.state > 100){
                 // send a couple of chars
-                main_uart_tx("Noah\n\r", sizeof("Noah\n\r") - 1);
+                main_uart_tx((uint8_t*)"Noah\n\r", sizeof("Noah\n\r") - 1);
 
                 buttonControl.state = DONE;
             }
