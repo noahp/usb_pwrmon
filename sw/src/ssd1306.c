@@ -14,10 +14,10 @@
 #define SSD1306_SIZEOF_SCREENBUF (128*64/8)
 
 // some pin abstractions
-#define SET_RST()   //(GPIOB_PSOR = (1 << 5))
-#define CLR_RST()   //(GPIOB_PCOR = (1 << 5))
-#define SET_DC()    //(GPIOA_PSOR = (1 << 6))
-#define CLR_DC()    //(GPIOA_PCOR = (1 << 6))
+#define SET_RST()   (GPIOB_PSOR = (1 << 5))
+#define CLR_RST()   (GPIOB_PCOR = (1 << 5))
+#define SET_DC()    (GPIOA_PSOR = (1 << 6))
+#define CLR_DC()    (GPIOA_PCOR = (1 << 6))
 
 // ssd1306 registers etc.
 #define SSD1306_SETCONTRAST				0x81
@@ -98,9 +98,9 @@ void ssd1306_init(void)
     // init spi0
     // configure io pins for spi
     // PTA5, 7, PTB0
-    PORTA_PCR5 = PORT_PCR_MUX(3);
-    PORTA_PCR7 = PORT_PCR_MUX(3);
-    PORTB_PCR0 = PORT_PCR_MUX(3);
+    PORTA_PCR5 = PORT_PCR_MUX(3);   // CS
+    PORTA_PCR7 = PORT_PCR_MUX(3);   // MOSI
+    PORTB_PCR0 = PORT_PCR_MUX(3);   // SCK
 
     // enable SPI0 module
     SIM_SCGC4 |= SIM_SCGC4_SPI0_MASK;
@@ -117,7 +117,7 @@ void ssd1306_init(void)
 
     // do some setup on the oled display
     // wait a ms after 3.3v comes up on reset
-    delay_ms(1);
+    delay_ms(10);
     // reset low for 10ms
     CLR_RST();  // low
     delay_ms(10);

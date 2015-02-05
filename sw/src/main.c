@@ -74,8 +74,6 @@ static void main_init_uart(void)
 
 static void main_init_adc(void)
 {
-    uint32_t data;
-
     // enable clocks for PORTB
     SIM_SCGC5 |= SIM_SCGC5_PORTB_MASK;
 
@@ -84,6 +82,7 @@ static void main_init_adc(void)
 
     // select ADC on pin B2
     //PORTB_PCR2 = PORT_PCR_MUX(0);   // default
+    //PORTB_PCR1 = PORT_PCR_MUX(0);   // default
 
     // set 12 bit mode, input clock is bus clock / 2 for 12MHz
     ADC0_CFG1 = ADC_CFG1_MODE(1) | ADC_CFG1_ADICLK(1);
@@ -95,7 +94,7 @@ static void main_init_adc(void)
     ADC0_SC2 = 0;
 
     // continuous conversion, hardware average enabled 32 samples
-    ADC0_SC3 = ADC_SC3_ADCO_MASK /*| ADC_SC3_AVGE_MASK | ADC_SC3_AVGS(3)*/;
+    ADC0_SC3 = 0;//ADC_SC3_ADCO_MASK /*| ADC_SC3_AVGE_MASK | ADC_SC3_AVGS(3)*/;
 
     // select input channel- also, after continuous mode selected, a write to
     // SC1A starts the conversion
@@ -107,37 +106,57 @@ static struct {
     uint32_t sum;
     uint32_t time;
     uint16_t avgInt;
-    uint16_t avgFrac;
+    uint32_t avgFrac;
     uint16_t buf[ADC_BUFSIZE];
     uint8_t idx;
-} adc_cntrl = {
-    .sum = 0,
-    .time = 0,
-    .idx = 0,
+} adc_cntrl[2] = {
+    {
+        .sum = 0,
+        .time = 0,
+        .idx = 0,
+    },
+    {
+        .sum = 0,
+        .time = 0,
+        .idx = 0,
+    },
 };
 
 static void main_adc(void)
 {
-    // every 1ms take a sample
-    if(adc_cntrl.time != systick_getMs()){
+    static uint8_t chid = 0;
+    static uint32_t adcTime = 0;
+
+    // every 10ms take a sample
+    if(systick_getMs() - adcTime > 10){
         uint32_t data = ADC0_SC1A;
         if(data & ADC_SC1_COCO_MASK){
             // conversion complete
             // remove oldest sample from sum
-            adc_cntrl.idx = (adc_cntrl.idx + 1) % ADC_BUFSIZE;
-            adc_cntrl.sum -= adc_cntrl.buf[adc_cntrl.idx];
+            adc_cntrl[chid].idx = (adc_cntrl[chid].idx + 1) % ADC_BUFSIZE;
+            adc_cntrl[chid].sum -= adc_cntrl[chid].buf[adc_cntrl[chid].idx];
             // add new sample and compute average
-            adc_cntrl.buf[adc_cntrl.idx] = ADC0_RA & 0xFFF;
-            adc_cntrl.sum += adc_cntrl.buf[adc_cntrl.idx];
-            data = adc_cntrl.sum / ADC_BUFSIZE;
+            adc_cntrl[chid].buf[adc_cntrl[chid].idx] = ADC0_RA & 0xFFF;
+            adc_cntrl[chid].sum += adc_cntrl[chid].buf[adc_cntrl[chid].idx];
+            data = adc_cntrl[chid].sum / ADC_BUFSIZE;
 
             // compute integer and fractional values
             data *= 330000; // prep to compute voltage
             data /= 4095;   // now in .000001 V units
-            adc_cntrl.avgInt = data / 100000;
-            adc_cntrl.avgFrac = data - (data / 100000);
+            adc_cntrl[chid].avgInt = data / 100000;
+            adc_cntrl[chid].avgFrac = data - (data / 100000);
 
-            adc_cntrl.time = systick_getMs();
+            adcTime = systick_getMs();
+
+            // start conversion on the other channel & select it
+            if(!chid){
+                ADC0_SC1A = ADC_SC1_ADCH(5);
+                chid = 1;
+            }
+            else{
+                ADC0_SC1A = ADC_SC1_ADCH(4);
+                chid = 0;
+            }
         }
     }
 }
@@ -200,7 +219,7 @@ static void main_uart(void)
             else if(systick_getMs() - buttonControl.state > 100){
                 // send a couple of chars
                 charcount = sprintf((char*)strBuf, "%d.%05dA\n\r",
-                                    adc_cntrl.avgInt, adc_cntrl.avgFrac);
+                                    adc_cntrl[0].avgInt, (int)adc_cntrl[0].avgFrac);
                 if(charcount){
                     main_uart_tx(strBuf, charcount);
                 }
@@ -225,7 +244,7 @@ static void main_uart(void)
         data = UART0_D;
         if(data == '?'){
             charcount = sprintf((char*)strBuf, "%d.%05dA\n\r",
-                                adc_cntrl.avgInt, adc_cntrl.avgFrac);
+                                adc_cntrl[0].avgInt, (int)adc_cntrl[0].avgFrac);
             if(charcount){
                 main_uart_tx(strBuf, charcount);
             }
@@ -235,24 +254,40 @@ static void main_uart(void)
 
 static void main_oled(void)
 {
-    static unsigned char linenum = 0;
     static uint32_t oledTime = 1001;
-    static int stringListIdx = 0;
-    char *stringList[] = {
-        "Hello world!",
-        "Another string.",
-//        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    };
+    char dataString[20];
 
-    // blink every 250ms
-    if(systick_getMs() - oledTime > 250){
+    if(systick_getMs() - oledTime > 500){
         oledTime = systick_getMs();
-        ssd1306_setLine(linenum++);
-        ssd1306_writeString(stringList[stringListIdx], 0);
-        if(++stringListIdx >= 2){
-            stringListIdx = 0;
-        }
+
+        sprintf(dataString, "%d.%05dA",
+                adc_cntrl[0].avgInt, (int)adc_cntrl[0].avgFrac);
+
+        ssd1306_setLine(0);
+        ssd1306_writeString(dataString, 0);
+
+//        sprintf(dataString, "%d.%05dA",
+//                adc_cntrl[0].avgInt, adc_cntrl[0].avgFrac);
     }
+
+//    static unsigned char linenum = 0;
+//    static uint32_t oledTime = 1001;
+//    static int stringListIdx = 0;
+//    char *stringList[] = {
+//        "Hello world!",
+//        "Another string.",
+////        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+//    };
+//
+//    // blink every 250ms
+//    if(systick_getMs() - oledTime > 250){
+//        oledTime = systick_getMs();
+//        ssd1306_setLine(linenum++);
+//        ssd1306_writeString(stringList[stringListIdx], 0);
+//        if(++stringListIdx >= 2){
+//            stringListIdx = 0;
+//        }
+//    }
 }
 
 int main(void) {

@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
-                              obj\Debug\main.o (__aeabi_uidiv)
+                              obj\Debug\src\main.o (__aeabi_uidiv)
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_dvmd_tls.o)
                               c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-exit.o)
@@ -13,7 +13,7 @@ c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
                               c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o)
-                              obj\Debug\main.o (sprintf)
+                              obj\Debug\src\main.o (sprintf)
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
                               c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o) (_svfprintf_r)
 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
@@ -69,20 +69,20 @@ Discarded input sections
  .ARM.exidx     0x00000000        0x8 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
  .ARM.attributes
                 0x00000000       0x1b c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
- .data          0x00000000        0x0 obj\Debug\delay.o
- .bss           0x00000000        0x0 obj\Debug\delay.o
- .text          0x00000000        0x0 obj\Debug\font_5x8.o
- .data          0x00000000        0x0 obj\Debug\font_5x8.o
- .bss           0x00000000        0x0 obj\Debug\font_5x8.o
- .data          0x00000000        0x0 obj\Debug\interrupts.o
- .bss           0x00000000        0x0 obj\Debug\interrupts.o
- .text          0x00000000        0x0 obj\Debug\noahs_face.o
- .bss           0x00000000        0x0 obj\Debug\noahs_face.o
- .data          0x00000000        0x0 obj\Debug\ssd1306.o
- .bss           0x00000000        0x0 obj\Debug\ssd1306.o
- .data          0x00000000        0x0 obj\Debug\startup.o
- .bss           0x00000000        0x0 obj\Debug\startup.o
- .data          0x00000000        0x0 obj\Debug\systick.o
+ .data          0x00000000        0x0 obj\Debug\src\delay.o
+ .bss           0x00000000        0x0 obj\Debug\src\delay.o
+ .text          0x00000000        0x0 obj\Debug\src\font_5x8.o
+ .data          0x00000000        0x0 obj\Debug\src\font_5x8.o
+ .bss           0x00000000        0x0 obj\Debug\src\font_5x8.o
+ .data          0x00000000        0x0 obj\Debug\src\interrupts.o
+ .bss           0x00000000        0x0 obj\Debug\src\interrupts.o
+ .text          0x00000000        0x0 obj\Debug\src\noahs_face.o
+ .bss           0x00000000        0x0 obj\Debug\src\noahs_face.o
+ .data          0x00000000        0x0 obj\Debug\src\ssd1306.o
+ .bss           0x00000000        0x0 obj\Debug\src\ssd1306.o
+ .data          0x00000000        0x0 obj\Debug\src\startup.o
+ .bss           0x00000000        0x0 obj\Debug\src\startup.o
+ .data          0x00000000        0x0 obj\Debug\src\systick.o
  .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
  .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_dvmd_tls.o)
@@ -191,118 +191,118 @@ Linker script and memory map
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crti.o
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crtbegin.o
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
-LOAD obj\Debug\delay.o
-LOAD obj\Debug\font_5x8.o
-LOAD obj\Debug\interrupts.o
-LOAD obj\Debug\main.o
-LOAD obj\Debug\noahs_face.o
-LOAD obj\Debug\ssd1306.o
-LOAD obj\Debug\startup.o
-LOAD obj\Debug\systick.o
+LOAD obj\Debug\src\delay.o
+LOAD obj\Debug\src\font_5x8.o
+LOAD obj\Debug\src\interrupts.o
+LOAD obj\Debug\src\main.o
+LOAD obj\Debug\src\noahs_face.o
+LOAD obj\Debug\src\ssd1306.o
+LOAD obj\Debug\src\startup.o
+LOAD obj\Debug\src\systick.o
 
 .interrupts     0x00000000       0xc0
  *(.isr_vector .isr_vector.*)
- .isr_vector    0x00000000       0xc0 obj\Debug\startup.o
+ .isr_vector    0x00000000       0xc0 obj\Debug\src\startup.o
                 0x00000000                g_pfnVectors
 
 .flashconfig    0x00000400       0x10
  *(.flashconfig .flashconfig.*)
- .flashconfig   0x00000400       0x10 obj\Debug\startup.o
+ .flashconfig   0x00000400       0x10 obj\Debug\src\startup.o
                 0x00000400                flashConfig
 
-.text           0x00000410     0x1539
+.text           0x00000410     0x15f5
  *(.text .text.* .gnu.linkonce.t.*)
- .text          0x00000410       0x28 obj\Debug\delay.o
+ .text          0x00000410       0x28 obj\Debug\src\delay.o
                 0x00000410                delay_ms
- .text          0x00000438       0xc0 obj\Debug\interrupts.o
+ .text          0x00000438       0xc0 obj\Debug\src\interrupts.o
                 0x00000478                ResetHandler
                 0x000004e4                SysTickIntHandler
                 0x000004f0                DefaultIntHandler
- .text          0x000004f8      0x4d4 obj\Debug\main.o
+ .text          0x000004f8      0x590 obj\Debug\src\main.o
                 0x000004f8                _sbrk
-                0x000009a4                main
- .text          0x000009cc      0x428 obj\Debug\ssd1306.o
-                0x000009cc                ssd1306_command
-                0x000009fc                ssd1306_data
-                0x00000a2c                ssd1306_init
-                0x00000bf4                ssd1306_setLine
-                0x00000c34                ssd1306_writeString
-                0x00000d14                ssd1306_writeStringSize2
- .text          0x00000df4       0x24 obj\Debug\startup.o
-                0x00000df4                StartupInitClock
- .text          0x00000e18       0x2c obj\Debug\systick.o
-                0x00000e18                systick_update
-                0x00000e30                systick_getMs
- .text          0x00000e44       0x9c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
-                0x00000e44                __aeabi_uidiv
-                0x00000e44                __udivsi3
-                0x00000ecc                __aeabi_uidivmod
- .text          0x00000ee0        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x00000ee0                __aeabi_idiv0
-                0x00000ee0                __aeabi_ldiv0
- .text.sprintf  0x00000ee4       0x44 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o)
-                0x00000ee4                siprintf
-                0x00000ee4                sprintf
+                0x00000a60                main
+ .text          0x00000a88      0x444 obj\Debug\src\ssd1306.o
+                0x00000a88                ssd1306_command
+                0x00000ac0                ssd1306_data
+                0x00000af8                ssd1306_init
+                0x00000ccc                ssd1306_setLine
+                0x00000d0c                ssd1306_writeString
+                0x00000dec                ssd1306_writeStringSize2
+ .text          0x00000ecc       0x24 obj\Debug\src\startup.o
+                0x00000ecc                StartupInitClock
+ .text          0x00000ef0       0x2c obj\Debug\src\systick.o
+                0x00000ef0                systick_update
+                0x00000f08                systick_getMs
+ .text          0x00000f1c       0x9c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000f1c                __aeabi_uidiv
+                0x00000f1c                __udivsi3
+                0x00000fa4                __aeabi_uidivmod
+ .text          0x00000fb8        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00000fb8                __aeabi_idiv0
+                0x00000fb8                __aeabi_ldiv0
+ .text.sprintf  0x00000fbc       0x44 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o)
+                0x00000fbc                siprintf
+                0x00000fbc                sprintf
  .text.__ssputs_r
-                0x00000f28       0xc0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
-                0x00000f28                __ssputs_r
+                0x00001000       0xc0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
+                0x00001000                __ssputs_r
  .text._svfprintf_r
-                0x00000fe8      0x1e0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
-                0x00000fe8                _svfiprintf_r
-                0x00000fe8                _svfprintf_r
+                0x000010c0      0x1e0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
+                0x000010c0                _svfiprintf_r
+                0x000010c0                _svfprintf_r
  .text._printf_common
-                0x000011c8       0xe8 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
-                0x000011c8                _printf_common
+                0x000012a0       0xe8 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x000012a0                _printf_common
  .text._printf_i
-                0x000012b0      0x22c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
-                0x000012b0                _printf_i
- .text.memchr   0x000014dc       0x16 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memchr-stub.o)
-                0x000014dc                memchr
- .text.memcpy   0x000014f2       0x12 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy-stub.o)
-                0x000014f2                memcpy
- .text.memmove  0x00001504       0x32 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memmove.o)
-                0x00001504                memmove
- *fill*         0x00001536        0x2 
- .text._free_r  0x00001538       0x90 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-freer.o)
-                0x00001538                _free_r
+                0x00001388      0x22c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x00001388                _printf_i
+ .text.memchr   0x000015b4       0x16 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memchr-stub.o)
+                0x000015b4                memchr
+ .text.memcpy   0x000015ca       0x12 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy-stub.o)
+                0x000015ca                memcpy
+ .text.memmove  0x000015dc       0x32 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memmove.o)
+                0x000015dc                memmove
+ *fill*         0x0000160e        0x2 
+ .text._free_r  0x00001610       0x90 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-freer.o)
+                0x00001610                _free_r
  .text._malloc_r
-                0x000015c8       0xa8 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
-                0x000015c8                _malloc_r
+                0x000016a0       0xa8 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
+                0x000016a0                _malloc_r
  .text._realloc_r
-                0x00001670       0x4c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-reallocr.o)
-                0x00001670                _realloc_r
- .text._sbrk_r  0x000016bc       0x24 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
-                0x000016bc                _sbrk_r
- .text.strlen   0x000016e0        0xe c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
-                0x000016e0                strlen
+                0x00001748       0x4c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-reallocr.o)
+                0x00001748                _realloc_r
+ .text._sbrk_r  0x00001794       0x24 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
+                0x00001794                _sbrk_r
+ .text.strlen   0x000017b8        0xe c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
+                0x000017b8                strlen
  .text._malloc_usable_size_r
-                0x000016ee       0x12 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-msizer.o)
-                0x000016ee                _malloc_usable_size_r
+                0x000017c6       0x12 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-msizer.o)
+                0x000017c6                _malloc_usable_size_r
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x00001700      0x1e0 obj\Debug\font_5x8.o
-                0x00001700                font5x8
- .rodata        0x000018e0       0x34 obj\Debug\main.o
+ .rodata        0x000017d8      0x1e0 obj\Debug\src\font_5x8.o
+                0x000017d8                font5x8
+ .rodata        0x000019b8       0x18 obj\Debug\src\main.o
  .rodata.str1.1
-                0x00001914        0x2 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-impure.o)
+                0x000019d0        0x2 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-impure.o)
  .rodata.str1.1
-                0x00001916       0x11 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
+                0x000019d2       0x11 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
  .rodata.str1.1
-                0x00001927       0x22 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
+                0x000019e3       0x22 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
 
-.vfp11_veneer   0x0000194c        0x0
+.vfp11_veneer   0x00001a08        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x0000194c        0x0
+.v4_bx          0x00001a08        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x0000194c        0x0
+.iplt           0x00001a08        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crtbegin.o
 
-.rel.dyn        0x0000194c        0x0
+.rel.dyn        0x00001a08        0x0
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crtbegin.o
 
 .ARM.extab
@@ -310,15 +310,15 @@ LOAD obj\Debug\systick.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000194c                . = ALIGN (0x4)
-                0x0000194c                _etext = .
-                0x0000194c                _sidata = .
+                0x00001a08                . = ALIGN (0x4)
+                0x00001a08                _etext = .
+                0x00001a08                _sidata = .
 
-.data           0x20000000      0x468 load address 0x0000194c
+.data           0x20000000      0x468 load address 0x00001a08
                 0x20000000                _sdata = .
  *(.data .data.*)
- .data          0x20000000        0x4 obj\Debug\main.o
- .data          0x20000004      0x400 obj\Debug\noahs_face.o
+ .data          0x20000000        0x4 obj\Debug\src\main.o
+ .data          0x20000004      0x400 obj\Debug\src\noahs_face.o
                 0x20000004                noahs_face
  .data.impure_data
                 0x20000404       0x60 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-impure.o)
@@ -328,42 +328,40 @@ LOAD obj\Debug\systick.o
                 0x20000468                . = ALIGN (0x4)
                 0x20000468                _edata = .
 
-.igot.plt       0x20000468        0x0 load address 0x00001db4
+.igot.plt       0x20000468        0x0 load address 0x00001e70
  .igot.plt      0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crtbegin.o
 
-.bss            0x1ffffc00       0x78
+.bss            0x1ffffc00       0xd0
                 0x1ffffc00                _sbss = .
  *(.bss .bss.*)
- .bss           0x1ffffc00       0x68 obj\Debug\main.o
- .bss           0x1ffffc68        0x4 obj\Debug\systick.o
-                0x1ffffc68                systick_ms
+ .bss           0x1ffffc00       0xc0 obj\Debug\src\main.o
+ .bss           0x1ffffcc0        0x4 obj\Debug\src\systick.o
+                0x1ffffcc0                systick_ms
  .bss.__malloc_sbrk_start
-                0x1ffffc6c        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
-                0x1ffffc6c                __malloc_sbrk_start
+                0x1ffffcc4        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
+                0x1ffffcc4                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x1ffffc70        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
-                0x1ffffc70                __malloc_free_list
+                0x1ffffcc8        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
+                0x1ffffcc8                __malloc_free_list
  *(COMMON)
- COMMON         0x1ffffc74        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
-                0x1ffffc74                errno
-                0x1ffffc78                . = ALIGN (0x4)
-                0x1ffffc78                _ebss = .
+ COMMON         0x1ffffccc        0x4 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
+                0x1ffffccc                errno
+                0x1ffffcd0                . = ALIGN (0x4)
+                0x1ffffcd0                _ebss = .
 
-.heap           0x1ffffc78        0x0
-                0x1ffffc78                __end__ = .
-                0x1ffffc78                end = __end__
+.heap           0x1ffffcd0        0x0
+                0x1ffffcd0                __end__ = .
+                0x1ffffcd0                end = __end__
  *(.heap*)
-                0x1ffffc78                __HeapLimit = .
+                0x1ffffcd0                __HeapLimit = .
 
-.co_stack       0x20000468      0x400 load address 0x00001db4
+.co_stack       0x20000468      0x400 load address 0x00001e70
                 0x20000468                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
- .co_stack      0x20000468      0x400 obj\Debug\startup.o
+ .co_stack      0x20000468      0x400 obj\Debug\src\startup.o
                 0x20000468                pulStack
                 0x20000868                . = ALIGN (0x4)
                 0x20000868                _end = .
-LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libstdc++_s.a
-LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libm.a
 START GROUP
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a
@@ -376,101 +374,101 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm
 LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m/crtn.o
 OUTPUT(bin\Debug\kl02.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x1277
- .debug_info    0x00000000       0xa0 obj\Debug\delay.o
- .debug_info    0x000000a0       0x4f obj\Debug\font_5x8.o
- .debug_info    0x000000ef      0x17a obj\Debug\interrupts.o
- .debug_info    0x00000269      0x7f9 obj\Debug\main.o
- .debug_info    0x00000a62       0x4a obj\Debug\noahs_face.o
- .debug_info    0x00000aac      0x55a obj\Debug\ssd1306.o
- .debug_info    0x00001006      0x1c7 obj\Debug\startup.o
- .debug_info    0x000011cd       0xaa obj\Debug\systick.o
+.debug_info     0x00000000     0x1279
+ .debug_info    0x00000000       0xa0 obj\Debug\src\delay.o
+ .debug_info    0x000000a0       0x4f obj\Debug\src\font_5x8.o
+ .debug_info    0x000000ef      0x17a obj\Debug\src\interrupts.o
+ .debug_info    0x00000269      0x7fb obj\Debug\src\main.o
+ .debug_info    0x00000a64       0x4a obj\Debug\src\noahs_face.o
+ .debug_info    0x00000aae      0x55a obj\Debug\src\ssd1306.o
+ .debug_info    0x00001008      0x1c7 obj\Debug\src\startup.o
+ .debug_info    0x000011cf       0xaa obj\Debug\src\systick.o
 
-.debug_abbrev   0x00000000      0x64e
- .debug_abbrev  0x00000000       0x6b obj\Debug\delay.o
- .debug_abbrev  0x0000006b       0x43 obj\Debug\font_5x8.o
- .debug_abbrev  0x000000ae      0x10a obj\Debug\interrupts.o
- .debug_abbrev  0x000001b8      0x1e9 obj\Debug\main.o
- .debug_abbrev  0x000003a1       0x3c obj\Debug\noahs_face.o
- .debug_abbrev  0x000003dd      0x131 obj\Debug\ssd1306.o
- .debug_abbrev  0x0000050e       0xc8 obj\Debug\startup.o
- .debug_abbrev  0x000005d6       0x78 obj\Debug\systick.o
+.debug_abbrev   0x00000000      0x650
+ .debug_abbrev  0x00000000       0x6b obj\Debug\src\delay.o
+ .debug_abbrev  0x0000006b       0x43 obj\Debug\src\font_5x8.o
+ .debug_abbrev  0x000000ae      0x10a obj\Debug\src\interrupts.o
+ .debug_abbrev  0x000001b8      0x1eb obj\Debug\src\main.o
+ .debug_abbrev  0x000003a3       0x3c obj\Debug\src\noahs_face.o
+ .debug_abbrev  0x000003df      0x131 obj\Debug\src\ssd1306.o
+ .debug_abbrev  0x00000510       0xc8 obj\Debug\src\startup.o
+ .debug_abbrev  0x000005d8       0x78 obj\Debug\src\systick.o
 
 .debug_aranges  0x00000000       0xf0
  .debug_aranges
-                0x00000000       0x20 obj\Debug\delay.o
+                0x00000000       0x20 obj\Debug\src\delay.o
  .debug_aranges
-                0x00000020       0x18 obj\Debug\font_5x8.o
+                0x00000020       0x18 obj\Debug\src\font_5x8.o
  .debug_aranges
-                0x00000038       0x20 obj\Debug\interrupts.o
+                0x00000038       0x20 obj\Debug\src\interrupts.o
  .debug_aranges
-                0x00000058       0x20 obj\Debug\main.o
+                0x00000058       0x20 obj\Debug\src\main.o
  .debug_aranges
-                0x00000078       0x18 obj\Debug\noahs_face.o
+                0x00000078       0x18 obj\Debug\src\noahs_face.o
  .debug_aranges
-                0x00000090       0x20 obj\Debug\ssd1306.o
+                0x00000090       0x20 obj\Debug\src\ssd1306.o
  .debug_aranges
-                0x000000b0       0x20 obj\Debug\startup.o
+                0x000000b0       0x20 obj\Debug\src\startup.o
  .debug_aranges
-                0x000000d0       0x20 obj\Debug\systick.o
+                0x000000d0       0x20 obj\Debug\src\systick.o
 
-.debug_line     0x00000000      0x7fc
- .debug_line    0x00000000       0xd2 obj\Debug\delay.o
- .debug_line    0x000000d2       0x61 obj\Debug\font_5x8.o
- .debug_line    0x00000133       0xfd obj\Debug\interrupts.o
- .debug_line    0x00000230      0x1ca obj\Debug\main.o
- .debug_line    0x000003fa       0x63 obj\Debug\noahs_face.o
- .debug_line    0x0000045d      0x1f2 obj\Debug\ssd1306.o
- .debug_line    0x0000064f       0xde obj\Debug\startup.o
- .debug_line    0x0000072d       0xcf obj\Debug\systick.o
+.debug_line     0x00000000      0x831
+ .debug_line    0x00000000       0xd6 obj\Debug\src\delay.o
+ .debug_line    0x000000d6       0x65 obj\Debug\src\font_5x8.o
+ .debug_line    0x0000013b      0x101 obj\Debug\src\interrupts.o
+ .debug_line    0x0000023c      0x1df obj\Debug\src\main.o
+ .debug_line    0x0000041b       0x67 obj\Debug\src\noahs_face.o
+ .debug_line    0x00000482      0x1fa obj\Debug\src\ssd1306.o
+ .debug_line    0x0000067c       0xe2 obj\Debug\src\startup.o
+ .debug_line    0x0000075e       0xd3 obj\Debug\src\systick.o
 
-.debug_str      0x00000000      0x77f
- .debug_str     0x00000000      0x111 obj\Debug\delay.o
-                                0x145 (size before relaxing)
- .debug_str     0x00000111       0x52 obj\Debug\font_5x8.o
-                                 0xbf (size before relaxing)
- .debug_str     0x00000163       0xd7 obj\Debug\interrupts.o
-                                0x1cc (size before relaxing)
- .debug_str     0x0000023a      0x32f obj\Debug\main.o
-                                0x446 (size before relaxing)
- .debug_str     0x00000569       0x4e obj\Debug\noahs_face.o
-                                 0xcd (size before relaxing)
- .debug_str     0x000005b7       0xc8 obj\Debug\ssd1306.o
-                                0x327 (size before relaxing)
- .debug_str     0x0000067f       0x98 obj\Debug\startup.o
-                                0x1ab (size before relaxing)
- .debug_str     0x00000717       0x68 obj\Debug\systick.o
-                                0x15d (size before relaxing)
+.debug_str      0x00000000      0x79a
+ .debug_str     0x00000000      0x115 obj\Debug\src\delay.o
+                                0x149 (size before relaxing)
+ .debug_str     0x00000115       0x56 obj\Debug\src\font_5x8.o
+                                 0xc3 (size before relaxing)
+ .debug_str     0x0000016b       0xdb obj\Debug\src\interrupts.o
+                                0x1d0 (size before relaxing)
+ .debug_str     0x00000246      0x32e obj\Debug\src\main.o
+                                0x445 (size before relaxing)
+ .debug_str     0x00000574       0x52 obj\Debug\src\noahs_face.o
+                                 0xd1 (size before relaxing)
+ .debug_str     0x000005c6       0xcc obj\Debug\src\ssd1306.o
+                                0x32b (size before relaxing)
+ .debug_str     0x00000692       0x9c obj\Debug\src\startup.o
+                                0x1af (size before relaxing)
+ .debug_str     0x0000072e       0x6c obj\Debug\src\systick.o
+                                0x161 (size before relaxing)
 
 .comment        0x00000000       0x70
- .comment       0x00000000       0x70 obj\Debug\delay.o
+ .comment       0x00000000       0x70 obj\Debug\src\delay.o
                                  0x71 (size before relaxing)
- .comment       0x00000000       0x71 obj\Debug\font_5x8.o
- .comment       0x00000000       0x71 obj\Debug\interrupts.o
- .comment       0x00000000       0x71 obj\Debug\main.o
- .comment       0x00000000       0x71 obj\Debug\noahs_face.o
- .comment       0x00000000       0x71 obj\Debug\ssd1306.o
- .comment       0x00000000       0x71 obj\Debug\startup.o
- .comment       0x00000000       0x71 obj\Debug\systick.o
+ .comment       0x00000000       0x71 obj\Debug\src\font_5x8.o
+ .comment       0x00000000       0x71 obj\Debug\src\interrupts.o
+ .comment       0x00000000       0x71 obj\Debug\src\main.o
+ .comment       0x00000000       0x71 obj\Debug\src\noahs_face.o
+ .comment       0x00000000       0x71 obj\Debug\src\ssd1306.o
+ .comment       0x00000000       0x71 obj\Debug\src\startup.o
+ .comment       0x00000000       0x71 obj\Debug\src\systick.o
 
 .ARM.attributes
                 0x00000000       0x28
  .ARM.attributes
-                0x00000000       0x32 obj\Debug\delay.o
+                0x00000000       0x32 obj\Debug\src\delay.o
  .ARM.attributes
-                0x00000032       0x32 obj\Debug\font_5x8.o
+                0x00000032       0x32 obj\Debug\src\font_5x8.o
  .ARM.attributes
-                0x00000064       0x32 obj\Debug\interrupts.o
+                0x00000064       0x32 obj\Debug\src\interrupts.o
  .ARM.attributes
-                0x00000096       0x32 obj\Debug\main.o
+                0x00000096       0x32 obj\Debug\src\main.o
  .ARM.attributes
-                0x000000c8       0x32 obj\Debug\noahs_face.o
+                0x000000c8       0x32 obj\Debug\src\noahs_face.o
  .ARM.attributes
-                0x000000fa       0x32 obj\Debug\ssd1306.o
+                0x000000fa       0x32 obj\Debug\src\ssd1306.o
  .ARM.attributes
-                0x0000012c       0x32 obj\Debug\startup.o
+                0x0000012c       0x32 obj\Debug\src\startup.o
  .ARM.attributes
-                0x0000015e       0x32 obj\Debug\systick.o
+                0x0000015e       0x32 obj\Debug\src\systick.o
  .ARM.attributes
                 0x00000190       0x1e c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
  .ARM.attributes
@@ -504,24 +502,24 @@ OUTPUT(bin\Debug\kl02.elf elf32-littlearm)
  .ARM.attributes
                 0x00000408       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
 
-.debug_frame    0x00000000      0x61c
- .debug_frame   0x00000000       0x30 obj\Debug\delay.o
- .debug_frame   0x00000030       0x88 obj\Debug\interrupts.o
- .debug_frame   0x000000b8      0x13c obj\Debug\main.o
- .debug_frame   0x000001f4       0xd0 obj\Debug\ssd1306.o
- .debug_frame   0x000002c4       0x2c obj\Debug\startup.o
- .debug_frame   0x000002f0       0x48 obj\Debug\systick.o
- .debug_frame   0x00000338       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00000358       0x4c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o)
- .debug_frame   0x000003a4       0x74 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
- .debug_frame   0x00000418       0x54 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
- .debug_frame   0x0000046c       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memchr-stub.o)
- .debug_frame   0x0000048c       0x28 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy-stub.o)
- .debug_frame   0x000004b4       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memmove.o)
- .debug_frame   0x000004e0       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-freer.o)
- .debug_frame   0x0000050c       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00000538       0x30 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00000568       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
- .debug_frame   0x00000594       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
- .debug_frame   0x000005b4       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-msizer.o)
- .debug_frame   0x000005d4       0x48 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
+.debug_frame    0x00000000      0x620
+ .debug_frame   0x00000000       0x30 obj\Debug\src\delay.o
+ .debug_frame   0x00000030       0x88 obj\Debug\src\interrupts.o
+ .debug_frame   0x000000b8      0x140 obj\Debug\src\main.o
+ .debug_frame   0x000001f8       0xd0 obj\Debug\src\ssd1306.o
+ .debug_frame   0x000002c8       0x2c obj\Debug\src\startup.o
+ .debug_frame   0x000002f4       0x48 obj\Debug\src\systick.o
+ .debug_frame   0x0000033c       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000035c       0x4c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sprintf.o)
+ .debug_frame   0x000003a8       0x74 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x0000041c       0x54 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x00000470       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00000490       0x28 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000004b8       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memmove.o)
+ .debug_frame   0x000004e4       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-freer.o)
+ .debug_frame   0x00000510       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000053c       0x30 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x0000056c       0x2c c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000598       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-strlen.o)
+ .debug_frame   0x000005b8       0x20 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-nano-msizer.o)
+ .debug_frame   0x000005d8       0x48 c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm-none-eabi/4.8.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-reent.o)
