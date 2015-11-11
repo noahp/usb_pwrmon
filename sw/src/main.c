@@ -5,23 +5,24 @@
 #include "ssd1306.h"
 #include <stdio.h> // sprintf
 
+
 // need to define _sbrk for sprintf (malloc)
-extern int __end__;
-extern caddr_t _sbrk(int incr);
-extern caddr_t _sbrk(int incr)
-{
-    static unsigned char *heap = NULL;
-    unsigned char *prev_heap;
-
-    if(heap == NULL){
-        heap = (unsigned char *)&__end__;
-    }
-    prev_heap = heap;
-
-    heap += incr;
-
-    return (caddr_t)prev_heap;
-}
+//extern int __end__;
+//extern caddr_t _sbrk(int incr);
+//extern caddr_t _sbrk(int incr)
+//{
+//    static unsigned char *heap = NULL;
+//    unsigned char *prev_heap;
+//
+//    if(heap == NULL){
+//        heap = (unsigned char *)&__end__;
+//    }
+//    prev_heap = heap;
+//
+//    heap += incr;
+//
+//    return (caddr_t)prev_heap;
+//}
 
 static void main_init_io(void)
 {
@@ -32,18 +33,18 @@ static void main_init_io(void)
     // enable clocks for PORTA
     SIM_SCGC5 |= SIM_SCGC5_PORTA_MASK;
 
-    // set A3 to GPIO
-    PORTA_PCR3 = PORT_PCR_MUX(1);
+    // set A4 to GPIO
+    PORTA_PCR4 = PORT_PCR_MUX(1);
 
-    // set output A3 high (LED on initially)
-    GPIOA_PSOR = (1 << 3);
+    // set output A4 high (LED on initially)
+    GPIOA_PSOR = (1 << 4);
 
-    // set A3 DDR to output
-    GPIOA_PDDR |= (1 << 3);
+    // set A4 DDR to output
+    GPIOA_PDDR |= (1 << 4);
 
-    // set A4 to GPIO- input, pullup enabled
-    PORTA_PCR4 = PORT_PCR_MUX(1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
-    GPIOA_PDDR &= ~(1 << 4);
+    // set A3 to GPIO- input, pullup enabled
+    PORTA_PCR3 = PORT_PCR_MUX(1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
+    GPIOA_PDDR &= ~(1 << 3);
 }
 
 static void main_init_uart(void)
@@ -145,12 +146,16 @@ static void main_adc(void)
 static void main_led(void)
 {
     static uint32_t blinkTime = 0;
+//    static uint32_t blinkCount = 0;
 
     // blink every 250ms
-    if(systick_getMs() - blinkTime > 250){
+    if(systick_getMs() - blinkTime > 10){
         blinkTime = systick_getMs();
         // toggle
-        GPIOA_PTOR = (1 << 3);
+        GPIOA_PTOR = (1 << 4);
+
+//        printf("says who!!!! %d\n", blinkCount);
+//        blinkCount++;
     }
 }
 
@@ -187,14 +192,14 @@ static void main_uart(void)
             buttonControl.state = IDLE;
             // fall through
         case IDLE:
-            if((data & (1 << 4)) == 0){
+            if((data & (1 << 3)) == 0){
                 buttonControl.state = ACTIVE;
                 buttonControl.time = systick_getMs();
             }
             break;
 
         case ACTIVE:
-            if((data & (1 << 4)) != 0){
+            if((data & (1 << 3)) != 0){
                 buttonControl.state = IDLE;
             }
             else if(systick_getMs() - buttonControl.state > 100){
@@ -212,7 +217,7 @@ static void main_uart(void)
 
         case DONE:
             // back to idle 100ms after release
-            if((data & (1 << 4)) != 0){
+            if((data & (1 << 3)) != 0){
                 if(systick_getMs() - buttonControl.state > 100){
                     buttonControl.state = IDLE;
                 }
@@ -254,8 +259,9 @@ static void main_oled(void)
         }
     }
 }
-
+extern void  initialise_monitor_handles(void);
 int main(void) {
+    initialise_monitor_handles();
     // initialize the necessary
     main_init_io();
     main_init_uart();
